@@ -144,6 +144,9 @@ h2 .n{font:500 12px var(--f-mono);color:var(--muted);text-transform:none;letter-
 .tag.kind{background:var(--accent);color:var(--accent-ink)}
 .listed .tag.kind{background:var(--brand);color:var(--brand-ink)}
 .tag.ut{border:1px solid var(--line);background:none}
+.pnote{font-size:11.5px;color:var(--muted);align-self:center;flex:none}
+.pub{display:flex;align-items:center;gap:5px;font:500 12px/1.2 var(--f-mono);color:var(--accent);margin:0 0 5px}
+.listed .pub{color:var(--muted)}
 .item h3{margin:0 0 4px;font:600 16px/1.3 var(--f-body)}
 .item p{margin:0 0 8px;font-size:14px;color:var(--muted)}
 .meta{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;align-items:center}
@@ -228,7 +231,7 @@ h2 .n{font:500 12px var(--f-mono);color:var(--muted);text-transform:none;letter-
         <div class="legend"><span><i class="sw-apt"></i>Apartment</span><span><i class="sw-vil"></i>Villa</span><span><i class="sw-twn"></i>Townhouse</span><span><i class="sw-mix"></i>Mixed</span></div></div></div>
       <div><h2>By date</h2><div class="card"><div class="tl" id="c-tl"></div>
         <div class="legend"><span><i style="background:var(--accent)"></i>News articles</span><span><i class="sw-apt"></i>Launch register</span></div>
-        <p class="note">Weekly counts. Launch-register entries carry the date they were captured.</p></div></div>
+        <p class="note">Weekly counts by publishing date. Launch-register entries have no publishing date and are shown in the week they were captured.</p></div></div>
     </div>
     <h2>Latest headlines</h2>
     <div class="news" id="latest"></div>
@@ -273,13 +276,14 @@ $("#theme").onclick=()=>{
   try{localStorage.setItem("rn-theme",nx)}catch(e){}
 };
 
-function refDate(){ // period counts back from the data's update date
-  return new Date((UPDATED||new Date().toISOString().slice(0,10))+"T00:00:00");
+function refDate(){ // periods count back from today (Dubai time) by publishing date
+  const today=new Date(Date.now()+4*36e5).toISOString().slice(0,10);
+  return new Date((UPDATED&&UPDATED>today?UPDATED:today)+"T00:00:00");
 }
 function filtered(ignore){
   const ref=refDate(),q=S.q.trim().toLowerCase();
   return DATA.filter(r=>{
-    if(S.period&&ignore!=="period"){const d=(ref-new Date(r.date+"T00:00:00"))/864e5;if(d>S.period)return false;}
+    if(S.period&&ignore!=="period"){if(r.dateType!=="reported")return false;const d=(ref-new Date(r.date+"T00:00:00"))/864e5;if(d<0||d>S.period)return false;}
     if(S.emirate&&ignore!=="emirate"&&r.emirate!==S.emirate)return false;
     if(S.unit&&ignore!=="unit"&&r.unitType!==S.unit)return false;
     if(S.dev&&ignore!=="dev"&&r.developer!==S.dev)return false;
@@ -299,7 +303,7 @@ function chips(){
   document.querySelectorAll("#period button").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.p===S.period));
   $("#dev").value=S.dev;
   const parts=[];
-  if(S.period)parts.push("last "+S.period+" days");if(S.emirate)parts.push(S.emirate);if(S.unit)parts.push(S.unit);
+  if(S.period)parts.push("published in last "+S.period+" days (undated register entries hidden)");if(S.emirate)parts.push(S.emirate);if(S.unit)parts.push(S.unit);
   if(S.dev)parts.push(S.dev);if(S.q)parts.push("“"+S.q+"”");
   $("#active").innerHTML=parts.length?`Showing: ${esc(parts.join(" · "))} <button id="clr">Clear all</button>`:"";
   const c=$("#clr");if(c)c.onclick=()=>{Object.assign(S,{period:0,emirate:"",unit:"",dev:"",q:""});$("#q").value="";render();};
@@ -323,6 +327,8 @@ function card(r){
     <div class="body">
     <div class="tags"><span class="tag kind">${r.dateType==="listed"?"LISTED":"NEWS"}</span><span class="tag">${esc(r.emirate)}</span>
     <span class="tag ut">${esc(r.unitType)}${r.unitBasis==="inferred"?' <span class="inf">inferred</span>':""}</span></div>
+    <div class="pub"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+      ${r.dateType==="listed"?`Listed on register · captured ${fmtDate(r.date)}`:`Published ${fmtDate(r.date)} · ${esc(r.source)}`}</div>
     <h3>${esc(r.title)}</h3><p>${esc(r.summary)}</p>
     <div class="meta"><span><b>${esc(r.developer)}</b></span><span>${esc(r.community)}</span>
     ${r.priceFrom?`<span class="price">from ${fmtAED(r.priceFrom)}</span>`:""}
