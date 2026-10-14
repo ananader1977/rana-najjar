@@ -88,7 +88,12 @@ h2 .n{font:500 12px var(--f-mono);color:var(--muted);text-transform:none;letter-
 .kpi.hl .v{color:var(--accent-hi)}
 
 /* Bars */
-.grid2{display:grid;gap:12px}
+.grid2{display:grid;gap:12px;align-items:stretch}
+.grid2>div{display:flex;flex-direction:column;min-width:0}
+.grid2>div>.card{flex:1;display:flex;flex-direction:column}
+.grid2>div>.card>.legend,.grid2>div>.card>.note{margin-top:auto;padding-top:10px}
+.bar.zero{opacity:.45;cursor:default}
+.bar.zero:hover .k{color:inherit}
 .bars{display:grid;gap:9px}
 .bar{display:grid;grid-template-columns:minmax(90px,38%) 1fr 34px;gap:8px;align-items:center;font-size:13px;
   background:none;border:0;padding:0;text-align:left;cursor:pointer;width:100%}
@@ -116,10 +121,13 @@ h2 .n{font:500 12px var(--f-mono);color:var(--muted);text-transform:none;letter-
 .tcol b{margin-bottom:4px}.tcol span{margin-top:4px}
 .tcol i{display:block;width:100%;max-width:36px;background:var(--accent);border-radius:4px 4px 0 0;min-height:2px}
 .tcol i.ls{background:var(--brand)}
+.tcol .sm{display:none}
+@media (max-width:600px){.tcol .lg{display:none}.tcol .sm{display:block}.tl{gap:3px}}
+.tcol i.z{height:2px;min-height:2px;background:var(--line);border-radius:1px}
 :root[data-theme="dark"] .tcol i.ls{background:var(--apt)}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tcol i.ls{background:var(--apt)}}
 .tcol b{font:500 11px var(--f-mono)}
-.tcol span{font:400 10px var(--f-mono);color:var(--muted);white-space:nowrap}
+.tcol span{font:400 10px var(--f-mono);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:clip;max-width:100%}
 .note{font-size:12px;color:var(--muted);margin:10px 0 0}
 
 /* News list */
@@ -231,7 +239,7 @@ h2 .n{font:500 12px var(--f-mono);color:var(--muted);text-transform:none;letter-
         <div class="legend"><span><i class="sw-apt"></i>Apartment</span><span><i class="sw-vil"></i>Villa</span><span><i class="sw-twn"></i>Townhouse</span><span><i class="sw-mix"></i>Mixed</span></div></div></div>
       <div><h2>By date</h2><div class="card"><div class="tl" id="c-tl"></div>
         <div class="legend"><span><i style="background:var(--accent)"></i>News articles</span><span><i class="sw-apt"></i>Launch register</span></div>
-        <p class="note">Weekly counts by publishing date. Launch-register entries have no publishing date and are shown in the week they were captured.</p></div></div>
+        <p class="note"><span id="tl-unit">Weekly</span> counts by publishing date. Launch-register entries have no publishing date and are counted on the date they were captured.</p></div></div>
     </div>
     <h2>Latest headlines</h2>
     <div class="news" id="latest"></div>
@@ -343,9 +351,9 @@ function dash(rows){
   $("#kpis").innerHTML=[
     ["Projects",rows.length,`${news} news · ${rows.length-news} listed`,true],
     ["Apartments",u.Apartment||0,"tower & residence launches"],
-    ["Villas & TH",(u.Villa||0)+(u.Townhouse||0),`${u.Mixed||0} mixed communities`],
-    ["Developers",devs.size,`across ${new Set(rows.map(r=>r.emirate)).size} emirates`],
-    ["Median entry",med?fmtAED(med):"—",`${prices.length} priced launches`]
+    ["Villas & TH",(u.Villa||0)+(u.Townhouse||0),`${u.Mixed||0} mixed communit${(u.Mixed||0)===1?"y":"ies"}`],
+    ["Developers",devs.size,(n=>`across ${n} emirate${n===1?"":"s"}`)(new Set(rows.map(r=>r.emirate)).size)],
+    ["Median entry",med?fmtAED(med):"—",`${prices.length} priced launch${prices.length===1?"":"es"}`]
   ].map(([l,v,s,h])=>`<div class="kpi ${h?"hl":""}"><div class="l">${l}</div><div class="v">${v}</div><div class="s">${s}</div></div>`).join("");
 
   // Unit type
@@ -355,25 +363,37 @@ function dash(rows){
      return `<button class="ustat" data-unit="${k}" style="border-color:var(--${UCLS[k]});background:none;border-top:0;border-right:0;border-bottom:0;text-align:left;cursor:pointer;color:inherit">
      <b>${u[k]||0}</b><span>${k}${p.length?` · from ${fmtAED(Math.min(...p))}`:""}</span></button>`}).join("")}</div>`;
 
-  // Emirate bars
+  // Emirate bars — always all seven emirates so the card keeps its shape
   const e=count(rows,"emirate"),eMax=Math.max(1,...Object.values(e));
-  $("#c-emi").innerHTML=EMIRATES.filter(x=>e[x]).sort((a,b)=>e[b]-e[a]).map(x=>
-    `<button class="bar" data-emi="${esc(x)}"><span class="k">${esc(x)}</span><span class="t"><i style="width:${e[x]/eMax*100}%;background:var(--accent)"></i></span><span class="c">${e[x]}</span></button>`).join("")||'<p class="empty">No data</p>';
+  $("#c-emi").innerHTML=EMIRATES.slice().sort((a,b)=>(e[b]||0)-(e[a]||0)||EMIRATES.indexOf(a)-EMIRATES.indexOf(b)).map(x=>{const n=e[x]||0;
+    return `<button class="bar${n?"":" zero"}" ${n?`data-emi="${esc(x)}"`:"disabled"}><span class="k">${esc(x)}</span><span class="t"><i style="width:${n/eMax*100}%;background:var(--accent)"></i></span><span class="c">${n}</span></button>`}).join("");
 
   // Developer stacked bars
   const dv={};rows.forEach(r=>{(dv[r.developer]=dv[r.developer]||{n:0});dv[r.developer].n++;dv[r.developer][r.unitType]=(dv[r.developer][r.unitType]||0)+1});
   const top=Object.entries(dv).sort((a,b)=>b[1].n-a[1].n||a[0].localeCompare(b[0])).slice(0,8),dMax=Math.max(1,...top.map(t=>t[1].n));
   $("#c-dev").innerHTML=top.map(([k,o])=>`<button class="bar" data-dev="${esc(k)}"><span class="k">${esc(k)}</span><span class="t" style="width:${o.n/dMax*100}%">${UNITS.map(x=>o[x]?`<i class="sw-${UCLS[x]}" style="width:${o[x]/o.n*100}%"></i>`:"").join("")}</span><span class="c">${o.n}</span></button>`).join("")||'<p class="empty">No data</p>';
 
-  // Timeline by week (Monday start)
-  const wk=d=>{const x=new Date(d+"T00:00:00");const day=(x.getDay()+6)%7;x.setDate(x.getDate()-day);return x.toISOString().slice(0,10)};
-  const W={};rows.forEach(r=>{const k=wk(r.date);W[k]=W[k]||{n:0,l:0};r.dateType==="listed"?W[k].l++:W[k].n++});
-  const keys=Object.keys(W).sort().slice(-10),tMax=Math.max(1,...keys.map(k=>W[k].n+W[k].l));
-  $("#c-tl").innerHTML=keys.map(k=>{const w=W[k],lab=new Date(k+"T00:00:00").toLocaleDateString("en-GB",{day:"numeric",month:"short"});
-    return `<div class="tcol" title="Week of ${fmtDate(k)}: ${w.n} news, ${w.l} listed"><b>${w.n+w.l}</b>`+
+  // Timeline — continuous buckets so spacing stays even: last 10 weeks, or months when data spans longer
+  const iso=x=>x.toISOString().slice(0,10);
+  const wk=d=>{const x=new Date(d+"T00:00:00Z");x.setUTCDate(x.getUTCDate()-(x.getUTCDay()+6)%7);return iso(x)};
+  const mo=d=>d.slice(0,7)+"-01";
+  const end=iso(refDate()),dates=rows.map(r=>r.date).sort(),first=dates[0]||end;
+  const spanW=(new Date(wk(end))-new Date(wk(first)))/6048e5+1;
+  const byMonth=spanW>10;const bucket=byMonth?mo:wk;
+  const keys=[];let c=new Date(bucket(byMonth?first:(spanW<10?iso(new Date(new Date(wk(end))-9*6048e5)):first))+"T00:00:00Z");
+  const last=new Date(bucket(end)+"T00:00:00Z");
+  while(c<=last&&keys.length<24){keys.push(iso(c));byMonth?c.setUTCMonth(c.getUTCMonth()+1):c.setUTCDate(c.getUTCDate()+7)}
+  const W={};keys.forEach(k=>W[k]={n:0,l:0});
+  rows.forEach(r=>{const k=bucket(r.date);if(W[k])r.dateType==="listed"?W[k].l++:W[k].n++});
+  const tMax=Math.max(1,...keys.map(k=>W[k].n+W[k].l));
+  const lab=k=>new Date(k+"T00:00:00Z").toLocaleDateString("en-GB",byMonth?{month:"short",timeZone:"UTC"}:{day:"numeric",month:"short",timeZone:"UTC"});
+  const sm=k=>{const d=new Date(k+"T00:00:00Z");return byMonth?d.toLocaleDateString("en-GB",{month:"narrow",timeZone:"UTC"}):d.getUTCDate()+"/"+(d.getUTCMonth()+1)};
+  $("#tl-unit").textContent=byMonth?"Monthly":"Weekly";
+  $("#c-tl").innerHTML=keys.map(k=>{const w=W[k],t=w.n+w.l;
+    return `<div class="tcol" title="${byMonth?"":"Week of "}${lab(k)}: ${w.n} news, ${w.l} listed"><b>${t||""}</b>`+
     (w.n?`<i style="height:${w.n/tMax*95}px;${w.l?"border-radius:4px 4px 0 0":""}"></i>`:"")+
     (w.l?`<i class="ls" style="height:${w.l/tMax*95}px;${w.n?"border-radius:0":""}"></i>`:"")+
-    `<span>${lab}</span></div>`}).join("")||'<p class="empty">No data</p>';
+    (t?"":`<i class="z"></i>`)+`<span class="lg">${lab(k)}</span><span class="sm">${sm(k)}</span></div>`}).join("");
   const latest=rows.filter(r=>r.dateType==="reported").slice(0,4);
   $("#latest").innerHTML=(latest.length?latest:rows.slice(0,4)).map(card).join("")||'<p class="empty">No items match these filters.</p>';
 }
