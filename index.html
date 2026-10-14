@@ -126,7 +126,16 @@ h2 .n{font:500 12px var(--f-mono);color:var(--muted);text-transform:none;letter-
 .date{font:600 13px/1 var(--f-mono);color:var(--muted);margin:18px 0 8px;display:flex;align-items:center;gap:8px}
 .date::after{content:"";flex:1;height:1px;background:var(--line)}
 .news{display:grid;gap:10px}
-.item{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--r);padding:12px 14px}
+.item{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--r);padding:0;overflow:hidden;display:flex;flex-direction:column}
+.item .body{padding:12px 14px}
+.ph{position:relative;margin:0;aspect-ratio:16/9;background:var(--surface-2);overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 10px 5px;font-size:10.5px;line-height:1.3;color:#fff;
+  background:linear-gradient(transparent,rgba(10,16,30,.78));display:flex;gap:6px;align-items:flex-end}
+.ph figcaption a{color:#fff;opacity:.85;text-decoration:none;margin-left:auto;white-space:nowrap}
+.ph figcaption a:hover{text-decoration:underline}
+.ph .area{font:600 10px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;background:rgba(0,0,0,.45);padding:3px 5px;border-radius:3px;white-space:nowrap}
+.ph.err img{display:none}
 .item.listed{border-left-color:var(--brand)}
 :root[data-theme="dark"] .item.listed{border-left-color:var(--apt)}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .item.listed{border-left-color:var(--apt)}}
@@ -235,7 +244,7 @@ h2 .n{font:500 12px var(--f-mono);color:var(--muted);text-transform:none;letter-
     <div class="dev" id="devlist"></div>
   </section>
 
-  <p class="foot">Compiled from public news and launch listings. Prices are developer "starting from" figures; verify before any decision.<br>Unit types marked <i>inferred</i> are classified from the project name when the source did not state them.</p>
+  <p class="foot">Compiled from public news and launch listings. Prices are developer "starting from" figures; verify before any decision.<br>Unit types marked <i>inferred</i> are classified from the project name when the source did not state them.<br>Photos marked “Area” show the neighbourhood, not the project — from Wikimedia Commons under free licences (credits on each photo).</p>
 </main>
 
 <nav class="tabbar" aria-label="Sections">
@@ -250,7 +259,7 @@ const EMIRATES=["Abu Dhabi","Dubai","Sharjah","Ajman","Umm Al Quwain","Ras Al Kh
 const UNITS=["Apartment","Villa","Townhouse","Mixed"];
 const UCLS={Apartment:"apt",Villa:"vil",Townhouse:"twn",Mixed:"mix"};
 const S={period:0,emirate:"",unit:"",dev:"",q:"",view:"dash"};
-let DATA=[],UPDATED="";
+let DATA=[],UPDATED="",PH=null;
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const fmtDate=d=>new Date(d+"T00:00:00").toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"});
@@ -296,14 +305,28 @@ function chips(){
   const c=$("#clr");if(c)c.onclick=()=>{Object.assign(S,{period:0,emirate:"",unit:"",dev:"",q:""});$("#q").value="";render();};
 }
 
+function photoFor(r){
+  if(r.image)return {src:r.image,label:r.project,credit:r.imageCredit||r.source,page:r.imageSource||r.url,own:true};
+  if(!PH)return null;
+  const c=(r.community+" "+r.project).toLowerCase();
+  for(const [k,v] of PH.rules)if(c.includes(k)&&PH.photos[v])return pick(v);
+  const f=PH.fallback[r.emirate];if(!f)return null;
+  if(f[r.unitType])return pick(f[r.unitType]);
+  const list=f.default;return pick(list[(r.id||0)%list.length]);
+}
+function pick(k){const p=PH.photos[k];return p?{src:p.src,label:p.label,credit:p.author+" · "+p.license,page:p.page}:null}
 function card(r){
+  const p=photoFor(r);
   return `<article class="item ${r.dateType==="listed"?"listed":""}">
+    ${p?`<figure class="ph"><img src="${esc(p.src)}" alt="${esc(p.label)}" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('err')">
+      <figcaption><span class="area">${p.own?"Project":"Area"}: ${esc(p.label)}</span><a href="${esc(p.page)}" target="_blank" rel="noopener">© ${esc(p.credit)}</a></figcaption></figure>`:""}
+    <div class="body">
     <div class="tags"><span class="tag kind">${r.dateType==="listed"?"LISTED":"NEWS"}</span><span class="tag">${esc(r.emirate)}</span>
     <span class="tag ut">${esc(r.unitType)}${r.unitBasis==="inferred"?' <span class="inf">inferred</span>':""}</span></div>
     <h3>${esc(r.title)}</h3><p>${esc(r.summary)}</p>
     <div class="meta"><span><b>${esc(r.developer)}</b></span><span>${esc(r.community)}</span>
     ${r.priceFrom?`<span class="price">from ${fmtAED(r.priceFrom)}</span>`:""}
-    <a class="src" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.source)} ↗</a></div></article>`;
+    <a class="src" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.source)} ↗</a></div></div></article>`;
 }
 
 function dash(rows){
@@ -389,7 +412,7 @@ document.addEventListener("click",ev=>{
 $("#dev").onchange=e=>{S.dev=e.target.value;render()};
 let qt;$("#q").oninput=e=>{clearTimeout(qt);qt=setTimeout(()=>{S.q=e.target.value;render()},150)};
 
-fetch("data/news.json?v="+Date.now()).then(r=>r.json()).then(j=>{
+Promise.all([fetch("data/news.json?v="+Date.now()).then(r=>r.json()),fetch("data/photos.json?v="+Date.now()).then(r=>r.json()).catch(()=>null)]).then(([j,ph])=>{PH=ph;
   DATA=j.items;UPDATED=j.updated;$("#upd").textContent=fmtDate(UPDATED).toUpperCase();
   [...new Set(DATA.map(r=>r.developer))].sort().forEach(d=>{const o=document.createElement("option");o.value=o.textContent=d;$("#dev").append(o)});
   render();

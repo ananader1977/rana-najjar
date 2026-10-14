@@ -1,0 +1,258 @@
+{
+ "note": "Area photos from Wikimedia Commons (free licences). They illustrate the location, not the project. An item's own 'image' field overrides these.",
+ "photos": {
+  "saadiyat": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Al_Jubail_Saadiyat_Island_aerial_view.jpg/960px-Al_Jubail_Saadiyat_Island_aerial_view.jpg",
+   "author": "Slywire",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Al_Jubail_Saadiyat_Island_aerial_view.jpg",
+   "label": "Saadiyat Island"
+  },
+  "yas": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Yas_Marina_Circuit_%2B_Ferrari_World_-Abu_Dhabi.jpg/960px-Yas_Marina_Circuit_%2B_Ferrari_World_-Abu_Dhabi.jpg",
+   "author": "Dapaan",
+   "license": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Yas_Marina_Circuit_%2B_Ferrari_World_-Abu_Dhabi.jpg",
+   "label": "Yas Island"
+  },
+  "reem": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Reem_Island_Mangroves.png/960px-Reem_Island_Mangroves.png",
+   "author": "PeterMayle",
+   "license": "CC0",
+   "page": "https://commons.wikimedia.org/wiki/File:Reem_Island_Mangroves.png",
+   "label": "Al Reem Island"
+  },
+  "marjan": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Aerial_View_Al_Marjan_Island.jpg/960px-Aerial_View_Al_Marjan_Island.jpg",
+   "author": "almarjanisland.com",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Aerial_View_Al_Marjan_Island.jpg",
+   "label": "Al Marjan Island"
+  },
+  "dubai-islands": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Palm_Deira_on_1_May_2007.jpg/960px-Palm_Deira_on_1_May_2007.jpg",
+   "author": "Imre Solt",
+   "license": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Palm_Deira_on_1_May_2007.jpg",
+   "label": "Dubai Islands (2007)"
+  },
+  "palm": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Artificial_Archipelagos%2C_Dubai%2C_United_Arab_Emirates_ISS022-E-024940_lrg_%28cropped%29.jpg/960px-Artificial_Archipelagos%2C_Dubai%2C_United_Arab_Emirates_ISS022-E-024940_lrg_%28cropped%29.jpg",
+   "author": "NASA ISS Expedition 22",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Artificial_Archipelagos,_Dubai,_United_Arab_Emirates_ISS022-E-024940_lrg_(cropped).jpg",
+   "label": "Palm Jumeirah"
+  },
+  "marina": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Dubai_Marina_Skyline.jpg/960px-Dubai_Marina_Skyline.jpg",
+   "author": "Norlando Pobre",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Dubai_Marina_Skyline.jpg",
+   "label": "Dubai Marina"
+  },
+  "jaddaf": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Al_Jaddaf%2C_Dubai.jpg/960px-Al_Jaddaf%2C_Dubai.jpg",
+   "author": "Derivator2017",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Al_Jaddaf,_Dubai.jpg",
+   "label": "Al Jaddaf"
+  },
+  "zorah": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Al_Zorah%2C_Ajman.jpg/960px-Al_Zorah%2C_Ajman.jpg",
+   "author": "Shabbir.hussainy",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Al_Zorah,_Ajman.jpg",
+   "label": "Al Zorah, Ajman"
+  },
+  "business-bay": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Downtown_Burj_Dubai_and_Business_Bay%2C_seen_from_Safa_Park.jpg/960px-Downtown_Burj_Dubai_and_Business_Bay%2C_seen_from_Safa_Park.jpg",
+   "author": "Robert Luxemburg",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Downtown_Burj_Dubai_and_Business_Bay,_seen_from_Safa_Park.jpg",
+   "label": "Downtown & Business Bay"
+  },
+  "downtown": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Dubai_skyscrapers_at_night_2011.jpg/960px-Dubai_skyscrapers_at_night_2011.jpg",
+   "author": "Michaelbibin (Pixabay)",
+   "license": "CC0",
+   "page": "https://commons.wikimedia.org/wiki/File:Dubai_skyscrapers_at_night_2011.jpg",
+   "label": "Dubai skyline"
+  },
+  "mina-rashid": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Port_Rashid_on_1_May_2007_Pict_1.jpg/960px-Port_Rashid_on_1_May_2007_Pict_1.jpg",
+   "author": "Imre Solt",
+   "license": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Port_Rashid_on_1_May_2007_Pict_1.jpg",
+   "label": "Mina Rashid (2007)"
+  },
+  "nad-al-sheba": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Nad_Al_Sheba_on_1_May_2007.jpg/960px-Nad_Al_Sheba_on_1_May_2007.jpg",
+   "author": "Imre Solt",
+   "license": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Nad_Al_Sheba_on_1_May_2007.jpg",
+   "label": "Nad Al Sheba (2007)"
+  },
+  "silicon-oasis": {
+   "src": "https://upload.wikimedia.org/wikipedia/en/thumb/9/94/Dubai_Silicon_Oasis_-_Dubai_-_United_Arab_Emirates_-_panoramio_%282%29.jpg/960px-Dubai_Silicon_Oasis_-_Dubai_-_United_Arab_Emirates_-_panoramio_%282%29.jpg",
+   "author": "wilhelmtittes",
+   "license": "CC BY 3.0",
+   "page": "https://en.wikipedia.org/wiki/File:Dubai_Silicon_Oasis_-_Dubai_-_United_Arab_Emirates_-_panoramio_(2).jpg",
+   "label": "Dubai Silicon Oasis"
+  },
+  "furjan": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/IMG_20171217_071221887_HDR.jpg/960px-IMG_20171217_071221887_HDR.jpg",
+   "author": "Upendra Bhardwaj",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:IMG_20171217_071221887_HDR.jpg",
+   "label": "Al Furjan"
+  },
+  "dubai-villas": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Arabian_Ranches_on_12_June_2007_Pict_2.jpg/960px-Arabian_Ranches_on_12_June_2007_Pict_2.jpg",
+   "author": "Imre Solt",
+   "license": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Arabian_Ranches_on_12_June_2007_Pict_2.jpg",
+   "label": "Dubai villa community"
+  },
+  "dubai": {
+   "src": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/Burj_Khalifa_2021.jpg/960px-Burj_Khalifa_2021.jpg",
+   "author": "Francisco Anzola",
+   "license": "CC BY 2.0",
+   "page": "https://en.wikipedia.org/wiki/File:Burj_Khalifa_2021.jpg",
+   "label": "Dubai"
+  },
+  "abu-dhabi": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Abu_dhabi_skylines_2014.jpg/960px-Abu_dhabi_skylines_2014.jpg",
+   "author": "Wadiia",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Abu_dhabi_skylines_2014.jpg",
+   "label": "Abu Dhabi skyline"
+  },
+  "sharjah": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Al_Qasba.jpg/960px-Al_Qasba.jpg",
+   "author": "Firoze Edassery",
+   "license": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Al_Qasba.jpg",
+   "label": "Sharjah"
+  },
+  "ajman": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Palacio_del_Emir_de_Ajm%C3%A1n.jpg/960px-Palacio_del_Emir_de_Ajm%C3%A1n.jpg",
+   "author": "Ulises Icardi",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Palacio_del_Emir_de_Ajm%C3%A1n.jpg",
+   "label": "Ajman"
+  },
+  "ras-al-khaimah": {
+   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Aerial_view_of_RAK_City_from_Al_Qawasim_Corniche_flagpole.jpg/960px-Aerial_view_of_RAK_City_from_Al_Qawasim_Corniche_flagpole.jpg",
+   "author": "Stevenmccombe",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_RAK_City_from_Al_Qawasim_Corniche_flagpole.jpg",
+   "label": "Ras Al Khaimah"
+  }
+ },
+ "rules": [
+  [
+   "saadiyat",
+   "saadiyat"
+  ],
+  [
+   "yas island",
+   "yas"
+  ],
+  [
+   "reem",
+   "reem"
+  ],
+  [
+   "marjan",
+   "marjan"
+  ],
+  [
+   "dubai islands",
+   "dubai-islands"
+  ],
+  [
+   "palm jumeirah",
+   "palm"
+  ],
+  [
+   "dubai marina",
+   "marina"
+  ],
+  [
+   "jaddaf",
+   "jaddaf"
+  ],
+  [
+   "zorah",
+   "zorah"
+  ],
+  [
+   "business bay",
+   "business-bay"
+  ],
+  [
+   "downtown dubai",
+   "downtown"
+  ],
+  [
+   "mina rashid",
+   "mina-rashid"
+  ],
+  [
+   "nad al sheba",
+   "nad-al-sheba"
+  ],
+  [
+   "silicon oasis",
+   "silicon-oasis"
+  ],
+  [
+   "furjan",
+   "furjan"
+  ]
+ ],
+ "fallback": {
+  "Dubai": {
+   "Villa": "dubai-villas",
+   "Townhouse": "dubai-villas",
+   "default": [
+    "dubai",
+    "downtown",
+    "business-bay",
+    "marina"
+   ]
+  },
+  "Abu Dhabi": {
+   "default": [
+    "abu-dhabi"
+   ]
+  },
+  "Sharjah": {
+   "default": [
+    "sharjah"
+   ]
+  },
+  "Ajman": {
+   "default": [
+    "ajman",
+    "zorah"
+   ]
+  },
+  "Ras Al Khaimah": {
+   "default": [
+    "ras-al-khaimah",
+    "marjan"
+   ]
+  },
+  "Umm Al Quwain": {
+   "default": [
+    "sharjah"
+   ]
+  },
+  "Fujairah": {
+   "default": [
+    "ras-al-khaimah"
+   ]
+  }
+ }
+}
