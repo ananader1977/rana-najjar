@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Rana Najjar</title>
+<meta name="description" content="UAE new real estate developments — news by unit type, developer, emirate and date.">
+<meta name="theme-color" content="#202A48">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --brand:#202A48; --brand-ink:#FFFFFF;          /* Al Bonian navy */
+  --accent:#B7242A; --accent-ink:#FFFFFF;        /* Al Bonian red */
+  --accent-hi:#F0868A;
+  --bg:#F4F4F7; --surface:#FFFFFF; --surface-2:#E9EDF3;
+  --fg:#14202E; --muted:#5B6878; --line:#D6DDE6; --chip:#E6E8EF;
+  --apt:#202A48; --vil:#B7242A; --twn:#C98A2B; --mix:#7A8799;
+  --f-display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --brand:#1B2440;--brand-ink:#F2F5F9;--accent:#E0474D;--accent-hi:#F0868A;
+  --bg:#0C1520;--surface:#132030;--surface-2:#1B2B3E;--fg:#E6ECF3;--muted:#9AA8B8;--line:#26384D;--chip:#1E3045;
+  --apt:#8FA6D6;--vil:#E0474D;--twn:#E8B04E;--mix:#9AA8B8;
+}}
+:root[data-theme="dark"]{
+  --brand:#1B2440;--brand-ink:#F2F5F9;--accent:#E0474D;--accent-hi:#F0868A;
+  --bg:#0C1520;--surface:#132030;--surface-2:#1B2B3E;--fg:#E6ECF3;--muted:#9AA8B8;--line:#26384D;--chip:#1E3045;
+  --apt:#8FA6D6;--vil:#E0474D;--twn:#E8B04E;--mix:#9AA8B8;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.45 var(--f-body);-webkit-text-size-adjust:100%}
+button,select,input{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* App bar */
+.appbar{position:sticky;top:0;z-index:20;background:var(--brand);color:var(--brand-ink);
+  padding:calc(10px + env(safe-area-inset-top,0px)) 16px 10px;border-bottom:3px solid var(--accent)}
+.ab-row{display:flex;align-items:center;gap:12px;max-width:1200px;margin:0 auto}
+.mark{width:40px;height:40px;flex:none;border-radius:8px;background:var(--accent);display:grid;place-items:center;
+  font:700 20px/1 var(--f-display);color:var(--accent-ink);letter-spacing:.03em}
+.ttl{flex:1;min-width:0}
+.ttl h1{margin:0;font:700 24px/1 var(--f-display);letter-spacing:.02em}
+.ttl p{margin:3px 0 0;font-size:12px;opacity:.82;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.upd{font:500 11px/1.2 var(--f-mono);text-align:right;opacity:.9}
+.upd b{display:block;color:var(--accent-hi);font-weight:500}
+.hbtn{flex:none;width:38px;height:38px;border-radius:8px;border:1px solid rgba(255,255,255,.28);background:transparent;
+  color:var(--brand-ink);display:grid;place-items:center;cursor:pointer}
+.tabs-top{display:none}
+
+/* Filters */
+.filters{max-width:1200px;margin:0 auto;padding:12px 16px 4px;display:grid;gap:10px}
+.row{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.row::-webkit-scrollbar{display:none}
+.lbl{font:600 11px/1 var(--f-mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);align-self:center;flex:none;width:58px}
+.chip{flex:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;cursor:pointer;font-size:13px;white-space:nowrap}
+.chip small{font-family:var(--f-mono);color:var(--muted);margin-left:4px}
+.chip[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.chip[aria-pressed="true"] small{color:var(--accent-hi)}
+.seg{display:inline-flex;background:var(--chip);border-radius:8px;padding:3px;flex:none}
+.seg button{border:0;background:transparent;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:13px}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);font-weight:500}
+.ctl{display:flex;gap:8px;flex-wrap:wrap}
+.ctl select,.ctl input{flex:1 1 160px;min-width:0;height:38px;border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:0 10px}
+.active{font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.active button{border:0;background:none;color:var(--accent);cursor:pointer;padding:0;font-size:12px;text-decoration:underline}
+
+/* Views */
+main{max-width:1200px;margin:0 auto;padding:6px 16px calc(84px + env(safe-area-inset-bottom,0px))}
+.view[hidden]{display:none}
+h2{font:600 19px/1.1 var(--f-display);letter-spacing:.03em;text-transform:uppercase;margin:18px 0 10px;color:var(--fg)}
+h2 .n{font:500 12px var(--f-mono);color:var(--muted);text-transform:none;letter-spacing:0;margin-left:6px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px}
+
+/* KPIs */
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:6px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px}
+.kpi .l{font:500 11px/1.2 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.kpi .v{font:700 30px/1.05 var(--f-display);margin-top:4px;font-variant-numeric:tabular-nums}
+.kpi .s{font-size:12px;color:var(--muted)}
+.kpi.hl{grid-column:1/-1;background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.kpi.hl .l,.kpi.hl .s{color:var(--brand-ink);opacity:.8}
+.kpi.hl .v{color:var(--accent-hi)}
+
+/* Bars */
+.grid2{display:grid;gap:12px}
+.bars{display:grid;gap:9px}
+.bar{display:grid;grid-template-columns:minmax(90px,38%) 1fr 34px;gap:8px;align-items:center;font-size:13px;
+  background:none;border:0;padding:0;text-align:left;cursor:pointer;width:100%}
+.bar .k{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .t{height:12px;background:var(--surface-2);border-radius:6px;overflow:hidden;display:flex}
+.bar .t i{display:block;height:100%}
+.bar .c{font:500 12px var(--f-mono);text-align:right;font-variant-numeric:tabular-nums}
+.bar:hover .k{color:var(--accent)}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:10px}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.sw-apt{background:var(--apt)}.sw-vil{background:var(--vil)}.sw-twn{background:var(--twn)}.sw-mix{background:var(--mix)}
+
+/* Split donut-alt: stacked unit bar */
+.stack{display:flex;height:22px;border-radius:6px;overflow:hidden;background:var(--surface-2)}
+.stack i{display:block;height:100%}
+.ustats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+.ustat{border-left:4px solid;padding:2px 0 2px 10px}
+.ustat b{font:700 22px/1 var(--f-display);display:block}
+.ustat span{font-size:12px;color:var(--muted)}
+
+/* Timeline */
+.tl{display:flex;align-items:flex-end;gap:6px;height:130px;padding-top:6px}
+.tcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:0;min-width:0}
+.tcol b{margin-bottom:4px}.tcol span{margin-top:4px}
+.tcol i{display:block;width:100%;max-width:36px;background:var(--accent);border-radius:4px 4px 0 0;min-height:2px}
+.tcol i.ls{background:var(--brand)}
+:root[data-theme="dark"] .tcol i.ls{background:var(--apt)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tcol i.ls{background:var(--apt)}}
+.tcol b{font:500 11px var(--f-mono)}
+.tcol span{font:400 10px var(--f-mono);color:var(--muted);white-space:nowrap}
+.note{font-size:12px;color:var(--muted);margin:10px 0 0}
+
+/* News list */
+.date{font:600 13px/1 var(--f-mono);color:var(--muted);margin:18px 0 8px;display:flex;align-items:center;gap:8px}
+.date::after{content:"";flex:1;height:1px;background:var(--line)}
+.news{display:grid;gap:10px}
+.item{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--r);padding:12px 14px}
+.item.listed{border-left-color:var(--brand)}
+:root[data-theme="dark"] .item.listed{border-left-color:var(--apt)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .item.listed{border-left-color:var(--apt)}}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
+.tag{font:500 11px/1 var(--f-mono);padding:4px 7px;border-radius:5px;background:var(--chip);white-space:nowrap}
+.tag.kind{background:var(--accent);color:var(--accent-ink)}
+.listed .tag.kind{background:var(--brand);color:var(--brand-ink)}
+.tag.ut{border:1px solid var(--line);background:none}
+.item h3{margin:0 0 4px;font:600 16px/1.3 var(--f-body)}
+.item p{margin:0 0 8px;font-size:14px;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;align-items:center}
+.meta b{font-weight:600}
+.price{font-family:var(--f-mono);color:var(--accent)}
+.src{margin-left:auto;color:var(--muted);text-decoration:none;font-size:12px}
+.src:hover{color:var(--accent);text-decoration:underline}
+.inf{font-size:10px;color:var(--muted);font-style:italic}
+.empty{padding:30px 10px;text-align:center;color:var(--muted)}
+
+/* Developer table */
+.dev{display:grid;gap:8px}
+.drow{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;display:grid;gap:6px;cursor:pointer;text-align:left;width:100%}
+.drow:hover{border-color:var(--accent)}
+.dtop{display:flex;align-items:baseline;gap:10px}
+.dtop b{font:600 17px/1.2 var(--f-display);letter-spacing:.02em;flex:1;min-width:0}
+.dtop span{font:500 12px var(--f-mono);color:var(--muted)}
+.dsub{font-size:12.5px;color:var(--muted)}
+
+/* Bottom tab bar */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(3,1fr);padding-bottom:env(safe-area-inset-bottom,0px)}
+.tabbar button{border:0;background:none;padding:9px 4px 8px;display:grid;justify-items:center;gap:3px;font-size:11px;color:var(--muted);cursor:pointer}
+.tabbar button svg{width:22px;height:22px}
+.tabbar button[aria-current="page"]{color:var(--accent);font-weight:600}
+.foot{font-size:11.5px;color:var(--muted);text-align:center;margin:28px 0 0}
+
+@media (min-width:760px){
+  .kpis{grid-template-columns:repeat(5,1fr)}
+  .kpi.hl{grid-column:auto}
+  .grid2{grid-template-columns:1fr 1fr}
+  .tabbar{display:none}
+  .tabs-top{display:flex;gap:4px;max-width:1200px;margin:10px auto 0}
+  .tabs-top button{border:0;background:transparent;color:var(--brand-ink);opacity:.75;padding:6px 14px;border-radius:6px;cursor:pointer;font:600 15px var(--f-display);letter-spacing:.05em;text-transform:uppercase}
+  .tabs-top button[aria-current="page"]{opacity:1;background:var(--accent)}
+  main{padding-bottom:40px}
+  .news{grid-template-columns:1fr 1fr}
+  .dev{grid-template-columns:1fr 1fr}
+}
+@media (min-width:1080px){.dev{grid-template-columns:1fr 1fr 1fr}}
+</style>
+</head>
+<body>
+<header class="appbar">
+  <div class="ab-row">
+    <div class="mark" aria-hidden="true">RN</div>
+    <div class="ttl"><h1>Rana Najjar</h1><p>UAE new real estate developments</p></div>
+    <div class="upd">UPDATED<b id="upd">—</b></div>
+    <button class="hbtn" id="theme" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </div>
+  <nav class="tabs-top" aria-label="Sections">
+    <button data-view="dash" aria-current="page">Dashboard</button>
+    <button data-view="news">News</button>
+    <button data-view="devs">Developers</button>
+  </nav>
+</header>
+
+<section class="filters" aria-label="Filters">
+  <div class="row"><span class="lbl">Period</span>
+    <div class="seg" id="period">
+      <button data-p="7">7D</button><button data-p="30">30D</button><button data-p="90">90D</button><button data-p="0" aria-pressed="true">All</button>
+    </div>
+  </div>
+  <div class="row" id="emi"><span class="lbl">Emirate</span></div>
+  <div class="row" id="ut"><span class="lbl">Unit</span></div>
+  <div class="ctl">
+    <select id="dev" aria-label="Developer"><option value="">All developers</option></select>
+    <input id="q" type="search" placeholder="Search project, community…" aria-label="Search">
+  </div>
+  <div class="active" id="active"></div>
+</section>
+
+<main>
+  <section class="view" id="v-dash">
+    <div class="kpis" id="kpis"></div>
+    <div class="grid2">
+      <div><h2>By unit type</h2><div class="card" id="c-unit"></div></div>
+      <div><h2>By emirate</h2><div class="card"><div class="bars" id="c-emi"></div></div></div>
+      <div><h2>Top developers</h2><div class="card"><div class="bars" id="c-dev"></div>
+        <div class="legend"><span><i class="sw-apt"></i>Apartment</span><span><i class="sw-vil"></i>Villa</span><span><i class="sw-twn"></i>Townhouse</span><span><i class="sw-mix"></i>Mixed</span></div></div></div>
+      <div><h2>By date</h2><div class="card"><div class="tl" id="c-tl"></div>
+        <div class="legend"><span><i style="background:var(--accent)"></i>News articles</span><span><i class="sw-apt"></i>Launch register</span></div>
+        <p class="note">Weekly counts. Launch-register entries carry the date they were captured.</p></div></div>
+    </div>
+    <h2>Latest headlines</h2>
+    <div class="news" id="latest"></div>
+  </section>
+
+  <section class="view" id="v-news" hidden>
+    <h2>All news <span class="n" id="news-n"></span></h2>
+    <div id="newslist"></div>
+  </section>
+
+  <section class="view" id="v-devs" hidden>
+    <h2>By developer <span class="n" id="dev-n"></span></h2>
+    <div class="dev" id="devlist"></div>
+  </section>
+
+  <p class="foot">Compiled from public news and launch listings. Prices are developer "starting from" figures; verify before any decision.<br>Unit types marked <i>inferred</i> are classified from the project name when the source did not state them.</p>
+</main>
+
+<nav class="tabbar" aria-label="Sections">
+  <button data-view="dash" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Dashboard</button>
+  <button data-view="news"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h13v16H6a2 2 0 0 1-2-2z"/><path d="M17 8h3v10a2 2 0 0 1-2 2"/><path d="M8 8h5M8 12h5M8 16h3"/></svg>News</button>
+  <button data-view="devs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 10h1M14 10h1M9 14h1M14 14h1"/></svg>Developers</button>
+</nav>
+
+<script>
+(function(){
+const EMIRATES=["Abu Dhabi","Dubai","Sharjah","Ajman","Umm Al Quwain","Ras Al Khaimah","Fujairah"];
+const UNITS=["Apartment","Villa","Townhouse","Mixed"];
+const UCLS={Apartment:"apt",Villa:"vil",Townhouse:"twn",Mixed:"mix"};
+const S={period:0,emirate:"",unit:"",dev:"",q:"",view:"dash"};
+let DATA=[],UPDATED="";
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmtDate=d=>new Date(d+"T00:00:00").toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"});
+const fmtAED=n=>n==null?"":n>=1e6?"AED "+(n/1e6).toFixed(n%1e6?2:0).replace(/\.?0+$/,"")+"M":"AED "+Math.round(n/1e3)+"K";
+
+// Theme (per-viewer preference)
+try{const t=localStorage.getItem("rn-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}
+$("#theme").onclick=()=>{
+  const cur=document.documentElement.dataset.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+  const nx=cur==="dark"?"light":"dark";document.documentElement.dataset.theme=nx;
+  try{localStorage.setItem("rn-theme",nx)}catch(e){}
+};
+
+function refDate(){ // period counts back from the data's update date
+  return new Date((UPDATED||new Date().toISOString().slice(0,10))+"T00:00:00");
+}
+function filtered(ignore){
+  const ref=refDate(),q=S.q.trim().toLowerCase();
+  return DATA.filter(r=>{
+    if(S.period&&ignore!=="period"){const d=(ref-new Date(r.date+"T00:00:00"))/864e5;if(d>S.period)return false;}
+    if(S.emirate&&ignore!=="emirate"&&r.emirate!==S.emirate)return false;
+    if(S.unit&&ignore!=="unit"&&r.unitType!==S.unit)return false;
+    if(S.dev&&ignore!=="dev"&&r.developer!==S.dev)return false;
+    if(q&&!(r.project+" "+r.developer+" "+r.community+" "+r.title+" "+r.emirate).toLowerCase().includes(q))return false;
+    return true;
+  });
+}
+const count=(arr,k)=>arr.reduce((m,r)=>(m[r[k]]=(m[r[k]]||0)+1,m),{});
+
+function chips(){
+  const e=count(filtered("emirate"),"emirate"),u=count(filtered("unit"),"unitType");
+  const tot1=Object.values(e).reduce((a,b)=>a+b,0),tot2=Object.values(u).reduce((a,b)=>a+b,0);
+  $("#emi").innerHTML='<span class="lbl">Emirate</span>'+[["",`All`,tot1]].concat(EMIRATES.map(x=>[x,x,e[x]||0]))
+    .map(([v,l,n])=>`<button class="chip" data-v="${esc(v)}" aria-pressed="${S.emirate===v}">${esc(l)}<small>${n}</small></button>`).join("");
+  $("#ut").innerHTML='<span class="lbl">Unit</span>'+[["","All",tot2]].concat(UNITS.map(x=>[x,x,u[x]||0]))
+    .map(([v,l,n])=>`<button class="chip" data-v="${esc(v)}" aria-pressed="${S.unit===v}">${esc(l)}<small>${n}</small></button>`).join("");
+  document.querySelectorAll("#period button").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.p===S.period));
+  $("#dev").value=S.dev;
+  const parts=[];
+  if(S.period)parts.push("last "+S.period+" days");if(S.emirate)parts.push(S.emirate);if(S.unit)parts.push(S.unit);
+  if(S.dev)parts.push(S.dev);if(S.q)parts.push("“"+S.q+"”");
+  $("#active").innerHTML=parts.length?`Showing: ${esc(parts.join(" · "))} <button id="clr">Clear all</button>`:"";
+  const c=$("#clr");if(c)c.onclick=()=>{Object.assign(S,{period:0,emirate:"",unit:"",dev:"",q:""});$("#q").value="";render();};
+}
+
+function card(r){
+  return `<article class="item ${r.dateType==="listed"?"listed":""}">
+    <div class="tags"><span class="tag kind">${r.dateType==="listed"?"LISTED":"NEWS"}</span><span class="tag">${esc(r.emirate)}</span>
+    <span class="tag ut">${esc(r.unitType)}${r.unitBasis==="inferred"?' <span class="inf">inferred</span>':""}</span></div>
+    <h3>${esc(r.title)}</h3><p>${esc(r.summary)}</p>
+    <div class="meta"><span><b>${esc(r.developer)}</b></span><span>${esc(r.community)}</span>
+    ${r.priceFrom?`<span class="price">from ${fmtAED(r.priceFrom)}</span>`:""}
+    <a class="src" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.source)} ↗</a></div></article>`;
+}
+
+function dash(rows){
+  const devs=new Set(rows.map(r=>r.developer)),u=count(rows,"unitType");
+  const prices=rows.map(r=>r.priceFrom).filter(Boolean).sort((a,b)=>a-b);
+  const med=prices.length?prices[Math.floor((prices.length-1)/2)]:null;
+  const news=rows.filter(r=>r.dateType==="reported").length;
+  $("#kpis").innerHTML=[
+    ["Projects",rows.length,`${news} news · ${rows.length-news} listed`,true],
+    ["Apartments",u.Apartment||0,"tower & residence launches"],
+    ["Villas & TH",(u.Villa||0)+(u.Townhouse||0),`${u.Mixed||0} mixed communities`],
+    ["Developers",devs.size,`across ${new Set(rows.map(r=>r.emirate)).size} emirates`],
+    ["Median entry",med?fmtAED(med):"—",`${prices.length} priced launches`]
+  ].map(([l,v,s,h])=>`<div class="kpi ${h?"hl":""}"><div class="l">${l}</div><div class="v">${v}</div><div class="s">${s}</div></div>`).join("");
+
+  // Unit type
+  const tot=rows.length||1;
+  $("#c-unit").innerHTML=`<div class="stack">${UNITS.map(k=>`<i class="sw-${UCLS[k]}" style="width:${(u[k]||0)/tot*100}%" title="${k}: ${u[k]||0}"></i>`).join("")}</div>
+   <div class="ustats">${UNITS.map(k=>{const p=rows.filter(r=>r.unitType===k&&r.priceFrom).map(r=>r.priceFrom);
+     return `<button class="ustat" data-unit="${k}" style="border-color:var(--${UCLS[k]});background:none;border-top:0;border-right:0;border-bottom:0;text-align:left;cursor:pointer;color:inherit">
+     <b>${u[k]||0}</b><span>${k}${p.length?` · from ${fmtAED(Math.min(...p))}`:""}</span></button>`}).join("")}</div>`;
+
+  // Emirate bars
+  const e=count(rows,"emirate"),eMax=Math.max(1,...Object.values(e));
+  $("#c-emi").innerHTML=EMIRATES.filter(x=>e[x]).sort((a,b)=>e[b]-e[a]).map(x=>
+    `<button class="bar" data-emi="${esc(x)}"><span class="k">${esc(x)}</span><span class="t"><i style="width:${e[x]/eMax*100}%;background:var(--accent)"></i></span><span class="c">${e[x]}</span></button>`).join("")||'<p class="empty">No data</p>';
+
+  // Developer stacked bars
+  const dv={};rows.forEach(r=>{(dv[r.developer]=dv[r.developer]||{n:0});dv[r.developer].n++;dv[r.developer][r.unitType]=(dv[r.developer][r.unitType]||0)+1});
+  const top=Object.entries(dv).sort((a,b)=>b[1].n-a[1].n||a[0].localeCompare(b[0])).slice(0,8),dMax=Math.max(1,...top.map(t=>t[1].n));
+  $("#c-dev").innerHTML=top.map(([k,o])=>`<button class="bar" data-dev="${esc(k)}"><span class="k">${esc(k)}</span><span class="t" style="width:${o.n/dMax*100}%">${UNITS.map(x=>o[x]?`<i class="sw-${UCLS[x]}" style="width:${o[x]/o.n*100}%"></i>`:"").join("")}</span><span class="c">${o.n}</span></button>`).join("")||'<p class="empty">No data</p>';
+
+  // Timeline by week (Monday start)
+  const wk=d=>{const x=new Date(d+"T00:00:00");const day=(x.getDay()+6)%7;x.setDate(x.getDate()-day);return x.toISOString().slice(0,10)};
+  const W={};rows.forEach(r=>{const k=wk(r.date);W[k]=W[k]||{n:0,l:0};r.dateType==="listed"?W[k].l++:W[k].n++});
+  const keys=Object.keys(W).sort().slice(-10),tMax=Math.max(1,...keys.map(k=>W[k].n+W[k].l));
+  $("#c-tl").innerHTML=keys.map(k=>{const w=W[k],lab=new Date(k+"T00:00:00").toLocaleDateString("en-GB",{day:"numeric",month:"short"});
+    return `<div class="tcol" title="Week of ${fmtDate(k)}: ${w.n} news, ${w.l} listed"><b>${w.n+w.l}</b>`+
+    (w.n?`<i style="height:${w.n/tMax*95}px;${w.l?"border-radius:4px 4px 0 0":""}"></i>`:"")+
+    (w.l?`<i class="ls" style="height:${w.l/tMax*95}px;${w.n?"border-radius:0":""}"></i>`:"")+
+    `<span>${lab}</span></div>`}).join("")||'<p class="empty">No data</p>';
+  const latest=rows.filter(r=>r.dateType==="reported").slice(0,4);
+  $("#latest").innerHTML=(latest.length?latest:rows.slice(0,4)).map(card).join("")||'<p class="empty">No items match these filters.</p>';
+}
+
+function newsList(rows){
+  $("#news-n").textContent=rows.length+" items";
+  if(!rows.length){$("#newslist").innerHTML='<p class="empty">No items match these filters.</p>';return}
+  const g={};rows.forEach(r=>(g[r.date]=g[r.date]||[]).push(r));
+  $("#newslist").innerHTML=Object.keys(g).sort().reverse().map(d=>`<div class="date">${fmtDate(d)}</div><div class="news">${
+    g[d].sort((a,b)=>(a.dateType>b.dateType?-1:1)||(b.priceFrom||0)-(a.priceFrom||0)).map(card).join("")}</div>`).join("");
+}
+
+function devList(rows){
+  const dv={};rows.forEach(r=>{const o=dv[r.developer]=dv[r.developer]||{n:0,u:{},e:new Set(),p:[],last:""};
+    o.n++;o.u[r.unitType]=(o.u[r.unitType]||0)+1;o.e.add(r.emirate);if(r.priceFrom)o.p.push(r.priceFrom);if(r.date>o.last)o.last=r.date});
+  const list=Object.entries(dv).sort((a,b)=>b[1].n-a[1].n||a[0].localeCompare(b[0]));
+  $("#dev-n").textContent=list.length+" developers";
+  $("#devlist").innerHTML=list.map(([k,o])=>`<button class="drow" data-dev="${esc(k)}">
+    <div class="dtop"><b>${esc(k)}</b><span>${o.n} project${o.n>1?"s":""}</span></div>
+    <div class="stack" style="height:8px">${UNITS.map(x=>o.u[x]?`<i class="sw-${UCLS[x]}" style="width:${o.u[x]/o.n*100}%"></i>`:"").join("")}</div>
+    <div class="dsub">${UNITS.filter(x=>o.u[x]).map(x=>o.u[x]+" "+x.toLowerCase()).join(" · ")} — ${esc([...o.e].join(", "))}${o.p.length?` · from ${fmtAED(Math.min(...o.p))}`:""}</div></button>`).join("")||'<p class="empty">No developers match these filters.</p>';
+}
+
+function render(){
+  const rows=filtered().sort((a,b)=>b.date.localeCompare(a.date)||(a.dateType==="reported"?-1:1));
+  chips();dash(rows);newsList(rows);devList(rows);
+  ["dash","news","devs"].forEach(v=>{$("#v-"+v).hidden=S.view!==v});
+  document.querySelectorAll("[data-view]").forEach(b=>{if(b.dataset.view===S.view)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});
+}
+
+// Events
+document.addEventListener("click",ev=>{
+  const t=ev.target.closest("button");if(!t)return;
+  if(t.closest("#emi")){S.emirate=t.dataset.v;render();}
+  else if(t.closest("#ut")){S.unit=t.dataset.v;render();}
+  else if(t.closest("#period")){S.period=+t.dataset.p;render();}
+  else if(t.dataset.view){S.view=t.dataset.view;render();scrollTo({top:0});}
+  else if(t.dataset.emi){S.emirate=S.emirate===t.dataset.emi?"":t.dataset.emi;render();}
+  else if(t.dataset.unit){S.unit=S.unit===t.dataset.unit?"":t.dataset.unit;render();}
+  else if(t.dataset.dev){S.dev=t.dataset.dev;S.view="news";render();scrollTo({top:0});}
+});
+$("#dev").onchange=e=>{S.dev=e.target.value;render()};
+let qt;$("#q").oninput=e=>{clearTimeout(qt);qt=setTimeout(()=>{S.q=e.target.value;render()},150)};
+
+fetch("data/news.json?v="+Date.now()).then(r=>r.json()).then(j=>{
+  DATA=j.items;UPDATED=j.updated;$("#upd").textContent=fmtDate(UPDATED).toUpperCase();
+  [...new Set(DATA.map(r=>r.developer))].sort().forEach(d=>{const o=document.createElement("option");o.value=o.textContent=d;$("#dev").append(o)});
+  render();
+}).catch(()=>{$("#v-dash").innerHTML='<p class="empty">Could not load data/news.json.</p>'});
+})();
+</script>
+</body>
+</html>
