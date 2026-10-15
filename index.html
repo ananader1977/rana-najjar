@@ -494,10 +494,10 @@ let SHARE_ALL=false;
 const fmtSq=n=>n>=1e6?(n/1e6).toFixed(2).replace(/\.?0+$/,"")+"M":n>=1e3?Math.round(n/1e3)+"K":String(n);
 function shareTable(rows){
   const dv={};rows.forEach(r=>{const o=dv[r.developer]=dv[r.developer]||{n:0,sq:0,c:0,u:0,pl:{}};o.n++;if(r.paymentPlan){const L=planLabel(r.paymentPlan);o.pl[L]=(o.pl[L]||0)+1;}if(r.estSqft){o.sq+=r.estSqft;o.c++;o.u+=r.units||0}});
-  const list=Object.entries(dv).sort((a,b)=>b[1].n-a[1].n||b[1].sq-a[1].sq||a[0].localeCompare(b[0]));
+  const list=Object.entries(dv).sort((a,b)=>b[1].sq-a[1].sq||b[1].n-a[1].n||a[0].localeCompare(b[0])); // largest est. sq ft first
   const tot=rows.length||1,covered=rows.filter(r=>r.estSqft).length,max=Math.max(1,...list.map(x=>x[1].n));
   $("#share-n").textContent=rows.length+" projects";
-  $("#share").innerHTML=`<thead><tr><th>Developer</th><th class="num">Proj.</th><th class="bar-col">% share</th><th>Typical plan</th><th class="num">Est. sq ft*</th></tr></thead><tbody>`+
+  $("#share").innerHTML=`<thead><tr><th>Developer</th><th class="num">Proj.</th><th class="bar-col">% share</th><th>Typical plan</th><th class="num">Est. sq ft* ▼</th></tr></thead><tbody>`+
     list.slice(0,SHARE_ALL?list.length:12).map(([k,o])=>`<tr data-dev="${esc(k)}"><td>${esc(k)}</td><td class="num">${o.n}</td>
       <td class="bar-col"><span class="mini"><i style="width:${o.n/max*100}%"></i></span><b>${(o.n/tot*100).toFixed(1)}%</b></td>
       <td class="tp">${(()=>{const e=Object.entries(o.pl).sort((a,b)=>b[1]-a[1]);return e.length?`${esc(e[0][0])}${e.length>1?`<small>+${e.length-1} other</small>`:""}`:'<span class="na">n/a</span>'})()}</td>
@@ -509,7 +509,8 @@ function devList(rows){
   shareTable(rows);
   const dv={};rows.forEach(r=>{const o=dv[r.developer]=dv[r.developer]||{n:0,u:{},e:new Set(),p:[],last:""};
     o.n++;o.u[r.unitType]=(o.u[r.unitType]||0)+1;o.e.add(r.emirate);if(r.priceFrom)o.p.push(r.priceFrom);if(r.date>o.last)o.last=r.date});
-  const list=Object.entries(dv).sort((a,b)=>b[1].n-a[1].n||a[0].localeCompare(b[0]));
+  const sq={};rows.forEach(r=>{if(r.estSqft)sq[r.developer]=(sq[r.developer]||0)+r.estSqft});
+  const list=Object.entries(dv).sort((a,b)=>(sq[b[0]]||0)-(sq[a[0]]||0)||b[1].n-a[1].n||a[0].localeCompare(b[0]));
   $("#dev-n").textContent=list.length+" developers";
   $("#devlist").innerHTML=list.map(([k,o])=>`<button class="drow" data-dev="${esc(k)}">
     <div class="dtop"><b>${esc(k)}</b><span>${o.n} project${o.n>1?"s":""}</span></div>
