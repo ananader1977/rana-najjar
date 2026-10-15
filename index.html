@@ -160,6 +160,25 @@ a.kpi:hover::after{color:var(--accent);opacity:1}
 .listed .tag.kind{background:var(--brand);color:var(--brand-ink)}
 .tag.stg.launch{background:none;border:1px solid var(--accent);color:var(--accent);font-weight:600}
 .tag.stg.existing{background:none;border:1px solid var(--muted);color:var(--muted)}
+.share-card{padding:6px 0 12px}
+.tblwrap{overflow-x:auto}
+table.share{width:100%;border-collapse:collapse;font-size:13px}
+table.share th{font:600 10.5px/1.2 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+table.share td{padding:7px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
+table.share tbody tr{cursor:pointer}
+table.share tbody tr:hover td:first-child{color:var(--accent)}
+table.share .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+table.share .num small{display:block;font-size:10.5px;color:var(--muted)}
+table.share .na{color:var(--muted)}
+table.share .bar-col{min-width:120px;white-space:nowrap}
+table.share .bar-col b{font:500 12px var(--f-mono);margin-left:6px}
+.mini{display:inline-block;vertical-align:middle;width:70px;height:8px;background:var(--surface-2);border-radius:4px;overflow:hidden}
+.mini i{display:block;height:100%;background:var(--accent)}
+@media (max-width:600px){.mini{display:none}table.share{font-size:12.5px}table.share th,table.share td{padding:7px 6px}table.share .bar-col{min-width:0}table.share th.bar-col{white-space:normal}}
+.more-btn{display:block;margin:10px auto 0;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 16px;font-size:13px;cursor:pointer}
+.share-card .note{padding:0 12px}
+.sqft{font:500 11.5px var(--f-mono);color:var(--fg);text-decoration:none;border-bottom:1px dotted var(--muted)}
+.sqft:hover{color:var(--accent)}
 .tag.ut{border:1px solid var(--line);background:none}
 .pnote{font-size:11.5px;color:var(--muted);align-self:center;flex:none}
 .pub{display:flex;align-items:center;gap:5px;font:500 12px/1.2 var(--f-mono);color:var(--accent);margin:0 0 5px}
@@ -269,6 +288,9 @@ a.kpi:hover::after{color:var(--accent);opacity:1}
   </section>
 
   <section class="view" id="v-devs" hidden>
+    <h2>Developer share <span class="n" id="share-n"></span></h2>
+    <div class="card share-card"><div class="tblwrap"><table class="share" id="share"></table></div>
+      <button class="more-btn" id="share-more" hidden></button><p class="note" id="share-note"></p></div>
     <h2>By developer <span class="n" id="dev-n"></span></h2>
     <div class="dev" id="devlist"></div>
   </section>
@@ -366,7 +388,7 @@ function card(r){
     <div class="pub"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
       ${r.dateType==="listed"?`Listed on register · captured ${fmtDate(r.date)}`:`Published ${fmtDate(r.date)} · ${esc(r.source)}`}</div>
     <h3>${esc(r.title)}</h3><p>${esc(r.summary)}</p>
-    <div class="meta"><span><b>${esc(r.developer)}</b></span><span>${esc(r.community)}</span>
+    <div class="meta"><span><b>${esc(r.developer)}</b></span><span>${esc(r.community)}</span>${r.estSqft?`<a class="sqft" href="${esc(r.specSource||r.url)}" target="_blank" rel="noopener" title="${r.units} units × ${r.sizeMinSqft.toLocaleString()}–${r.sizeMaxSqft.toLocaleString()} sq ft">≈${fmtSq(r.estSqft)} sq ft est. · ${r.units} units</a>`:""}
     ${r.priceFrom?`<span class="price">from ${fmtAED(r.priceFrom)}</span>`:""}
     <a class="src" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.source)} ↗</a></div></div></article>`;
 }
@@ -436,7 +458,22 @@ function newsList(rows){
     g[d].sort((a,b)=>(a.dateType>b.dateType?-1:1)||(b.priceFrom||0)-(a.priceFrom||0)).map(card).join("")}</div>`).join("");
 }
 
+let SHARE_ALL=false;
+const fmtSq=n=>n>=1e6?(n/1e6).toFixed(2).replace(/\.?0+$/,"")+"M":n>=1e3?Math.round(n/1e3)+"K":String(n);
+function shareTable(rows){
+  const dv={};rows.forEach(r=>{const o=dv[r.developer]=dv[r.developer]||{n:0,sq:0,c:0,u:0};o.n++;if(r.estSqft){o.sq+=r.estSqft;o.c++;o.u+=r.units||0}});
+  const list=Object.entries(dv).sort((a,b)=>b[1].n-a[1].n||b[1].sq-a[1].sq||a[0].localeCompare(b[0]));
+  const tot=rows.length||1,covered=rows.filter(r=>r.estSqft).length,max=Math.max(1,...list.map(x=>x[1].n));
+  $("#share-n").textContent=rows.length+" projects";
+  $("#share").innerHTML=`<thead><tr><th>Developer</th><th class="num">Proj.</th><th class="bar-col">% share</th><th class="num">Est. sq ft*</th></tr></thead><tbody>`+
+    list.slice(0,SHARE_ALL?list.length:12).map(([k,o])=>`<tr data-dev="${esc(k)}"><td>${esc(k)}</td><td class="num">${o.n}</td>
+      <td class="bar-col"><span class="mini"><i style="width:${o.n/max*100}%"></i></span><b>${(o.n/tot*100).toFixed(1)}%</b></td>
+      <td class="num">${o.c?`${fmtSq(o.sq)}<small>${o.u.toLocaleString()} units</small><small>${o.c}/${o.n} proj.</small>`:'<span class="na">n/a</span>'}</td></tr>`).join("")+"</tbody>";
+  $("#share-more").hidden=list.length<=12;$("#share-more").textContent=SHARE_ALL?"Show top 12":`Show all ${list.length} developers`;
+  $("#share-note").innerHTML=`* Estimated sellable area = published units × midpoint of the published unit-size range. Developers rarely publish total built-up area, so this is available for <b>${covered} of ${rows.length}</b> projects shown and is <b>not</b> a market-share figure. % of projects is exact for the projects tracked here, not the whole UAE market.`;
+}
 function devList(rows){
+  shareTable(rows);
   const dv={};rows.forEach(r=>{const o=dv[r.developer]=dv[r.developer]||{n:0,u:{},e:new Set(),p:[],last:""};
     o.n++;o.u[r.unitType]=(o.u[r.unitType]||0)+1;o.e.add(r.emirate);if(r.priceFrom)o.p.push(r.priceFrom);if(r.date>o.last)o.last=r.date});
   const list=Object.entries(dv).sort((a,b)=>b[1].n-a[1].n||a[0].localeCompare(b[0]));
@@ -480,6 +517,8 @@ function render(){
 
 // Events
 document.addEventListener("click",ev=>{
+  if(ev.target.id==="share-more"){SHARE_ALL=!SHARE_ALL;render();return;}
+  const tr=ev.target.closest("#share tr[data-dev]");if(tr){S.dev=tr.dataset.dev;S.view="news";go(false,true);return;}
   const a=ev.target.closest("a[href^='#/']");
   if(a){if(ev.metaKey||ev.ctrlKey||ev.shiftKey||ev.button)return;ev.preventDefault();history.pushState(null,"",a.getAttribute("href"));fromHash();render();scrollTo({top:0});return;}
   const t=ev.target.closest("button");if(!t)return;

@@ -66,7 +66,12 @@
    "summary": "The branded tower will hold 165 homes, from one- to four-bedroom simplex and duplex units up to a top-floor penthouse; construction is under way, with handover targeted for Q2 2030.",
    "source": "Khaleej Times",
    "url": "https://www.khaleejtimes.com/business/property/saas-properties-launches-the-ritz-carlton-residences-al-maryah-island-at-livex-2026",
-   "stage": "launch"
+   "stage": "launch",
+   "units": 165,
+   "sizeMinSqft": 926,
+   "sizeMaxSqft": 5802,
+   "estSqft": 555000.0,
+   "specSource": "https://metropolitan.realestate/al-maryah-island/the-ritz-carlton-residences-saas-properties-al-maryah-island-abu-dhabi/"
   },
   {
    "id": 90,
@@ -83,7 +88,12 @@
    "summary": "The follow-on phase offers two- and three-bedroom townhouses plus four-bedroom villas, with completion slated for Q4 2029.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "units": 352,
+   "sizeMinSqft": 1347,
+   "sizeMaxSqft": 2198,
+   "estSqft": 624000.0,
+   "specSource": "https://metropolitan.realestate/al-ghadeer/al-ghadeer-gardens-new-release-aldar-seih-sedeirah-abu-dhabi/"
   },
   {
    "id": 91,

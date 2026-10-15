@@ -84,7 +84,12 @@
    "source": "The National",
    "url": "https://www.thenationalnews.com/business/property/2026/09/29/aldar-generates-more-than-dh5bn-in-sales-from-new-housing-developments/",
    "id": 5,
-   "stage": "existing"
+   "stage": "existing",
+   "units": 292,
+   "sizeMinSqft": 4704,
+   "sizeMaxSqft": 6555,
+   "estSqft": 1644000.0,
+   "specSource": "https://metropolitan.realestate/yas-island/yas-riva-reserve-aldar-yas-island-abu-dhabi/"
   },
   {
    "date": "2026-09-17",
@@ -101,7 +106,12 @@
    "source": "Saadiyat Keys",
    "url": "https://saadiyatkeys.com/insights/weekly/2026-10-02/",
    "id": 6,
-   "stage": "launch"
+   "stage": "launch",
+   "units": 351,
+   "sizeMinSqft": 5403,
+   "sizeMaxSqft": 6824,
+   "estSqft": 2146000.0,
+   "specSource": "https://metropolitan.realestate/saadiyat-island/talay-marsa-al-saadiyat/"
   },
   {
    "date": "2026-09-07",
@@ -118,7 +128,12 @@
    "source": "Saadiyat Keys",
    "url": "https://saadiyatkeys.com/insights/weekly/2026-10-02/",
    "id": 7,
-   "stage": "launch"
+   "stage": "launch",
+   "units": 778,
+   "sizeMinSqft": 753,
+   "sizeMaxSqft": 2239,
+   "estSqft": 1164000.0,
+   "specSource": "https://metropolitan.realestate/saadiyat-island/sei-saadiyat-aldar-saadiyat-cultural-district/"
   },
   {
    "date": "2026-09-14",
@@ -526,7 +541,12 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 31,
-   "stage": "launch"
+   "stage": "launch",
+   "units": 93,
+   "sizeMinSqft": 2345,
+   "sizeMaxSqft": 2404,
+   "estSqft": 221000.0,
+   "specSource": "https://metropolitan.realestate/damac-hills-2/violet-4-damac-hills-2-dubai/"
   },
   {
    "date": "2026-10-14",
@@ -560,7 +580,12 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 33,
-   "stage": "launch"
+   "stage": "launch",
+   "units": 541,
+   "sizeMinSqft": 857,
+   "sizeMaxSqft": 3215,
+   "estSqft": 1101000.0,
+   "specSource": "https://metropolitan.realestate/wasl-1/avenue-park-towers-ii-wasl-wasl-1-dubai/"
   },
   {
    "date": "2026-10-14",
@@ -577,7 +602,12 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 34,
-   "stage": "launch"
+   "stage": "launch",
+   "units": 125,
+   "sizeMinSqft": 631,
+   "sizeMaxSqft": 1864,
+   "estSqft": 156000.0,
+   "specSource": "https://metropolitan.realestate/ramhan-island/the-bristol-residences-eagle-hills-ramhan-island-abu-dhabi/"
   },
   {
    "date": "2026-10-14",
@@ -917,7 +947,12 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 828k.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "units": 771,
+   "sizeMinSqft": 348,
+   "sizeMaxSqft": 1931,
+   "estSqft": 879000.0,
+   "specSource": "https://metropolitan.realestate/al-jaddaff/binghatti-starfall-al-jaddaf-dubai/"
   },
   {
    "id": 55,
@@ -985,7 +1020,12 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 885k.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "units": 616,
+   "sizeMinSqft": 368,
+   "sizeMaxSqft": 1082,
+   "estSqft": 447000.0,
+   "specSource": "https://metropolitan.realestate/al-marjan-island/the-views-ardee-developments-al-marjan-island-ras-al-khaimah/"
   },
   {
    "id": 59,
@@ -1121,7 +1161,12 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 1.60m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "units": 1666,
+   "sizeMinSqft": 441,
+   "sizeMaxSqft": 1884,
+   "estSqft": 1937000.0,
+   "specSource": "https://metropolitan.realestate/dubai-science-park/binghatti-hills/"
   },
   {
    "id": 67,
@@ -1240,7 +1285,12 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 2.10m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "units": 80,
+   "sizeMinSqft": 1252,
+   "sizeMaxSqft": 1585,
+   "estSqft": 113000.0,
+   "specSource": "https://metropolitan.realestate/dubai-south/tessera-residences/"
   },
   {
    "id": 74,
