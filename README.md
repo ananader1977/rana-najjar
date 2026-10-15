@@ -16,5 +16,5 @@ All content lives in `data/news.json`. Each item:
 ```
 
 - `dateType: reported` = date of the news article. `listed` = date the project was captured from a launch register.
-- To update: add items to `items`, bump `updated` to today's date, commit. GitHub Pages redeploys in ~1 minute.
-- A Claude scheduled task appends new items every morning.
+- `data/news.json` is the base archive. New items arrive as small daily files `data/daily/YYYY-MM-DD.json` (`{"items":[...]}`) listed in `data/manifest.json` (`{"updated":"YYYY-MM-DD","files":["daily/YYYY-MM-DD.json", …]}`). The page merges them and drops duplicates (same developer + project).
+- A Claude scheduled task writes the day's file and the manifest every morning via the GitHub connector. GitHub Pages redeploys in ~1 minute.

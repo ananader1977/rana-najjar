@@ -438,8 +438,14 @@ document.addEventListener("click",ev=>{
 $("#dev").onchange=e=>{S.dev=e.target.value;render()};
 let qt;$("#q").oninput=e=>{clearTimeout(qt);qt=setTimeout(()=>{S.q=e.target.value;render()},150)};
 
-Promise.all([fetch("data/news.json?v="+Date.now()).then(r=>r.json()),fetch("data/photos.json?v="+Date.now()).then(r=>r.json()).catch(()=>null)]).then(([j,ph])=>{PH=ph;
-  DATA=j.items;UPDATED=j.updated;$("#upd").textContent=fmtDate(UPDATED).toUpperCase();
+const V="?v="+Date.now(),get=u=>fetch(u+V).then(r=>{if(!r.ok)throw new Error(u);return r.json()});
+// Base archive + small daily files listed in data/manifest.json (daily task writes one file per day)
+Promise.all([get("data/news.json"),get("data/photos.json").catch(()=>null),get("data/manifest.json").catch(()=>({files:[]}))]).then(async([j,ph,m])=>{PH=ph;
+  const daily=await Promise.all((m.files||[]).map(f=>get("data/"+f).catch(()=>({items:[]}))));
+  const seen=new Set(),all=[];
+  [j.items,...daily.map(d=>d.items||[])].flat().forEach(r=>{const k=(r.developer+"|"+r.project).toLowerCase();if(seen.has(k))return;seen.add(k);all.push(r)});
+  all.forEach((r,i)=>{if(r.id==null)r.id=1000+i});
+  DATA=all;UPDATED=[j.updated,m.updated].filter(Boolean).sort().pop();$("#upd").textContent=fmtDate(UPDATED).toUpperCase();
   [...new Set(DATA.map(r=>r.developer))].sort().forEach(d=>{const o=document.createElement("option");o.value=o.textContent=d;$("#dev").append(o)});
   render();
 }).catch(()=>{$("#v-dash").innerHTML='<p class="empty">Could not load data/news.json.</p>'});
