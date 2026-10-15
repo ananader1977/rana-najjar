@@ -78,11 +78,18 @@ h2 .n{font:500 12px var(--f-mono);color:var(--muted);text-transform:none;letter-
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px}
 
 /* KPIs */
-.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:6px}
-.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px}
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:6px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px;min-width:0;display:block;text-decoration:none;color:inherit;position:relative;transition:border-color .15s,transform .15s}
+a.kpi:hover{border-color:var(--accent)}
+a.kpi:active{transform:scale(.98)}
+a.kpi::after{content:"→";position:absolute;top:10px;right:12px;font:500 13px var(--f-mono);color:var(--muted);opacity:.7}
+a.kpi:hover::after{color:var(--accent);opacity:1}
+.kpi.hl::after{color:var(--brand-ink)}
 .kpi .l{font:500 11px/1.2 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-.kpi .v{font:700 30px/1.05 var(--f-display);margin-top:4px;font-variant-numeric:tabular-nums}
-.kpi .s{font-size:12px;color:var(--muted)}
+.kpi .v{font:700 clamp(24px,7.5vw,34px)/1.05 var(--f-display);margin-top:4px;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kpi .s{font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.kpi .l{padding-right:16px}
+.kpi .v .cur{font-size:.5em;font-weight:600;margin-right:3px;letter-spacing:.04em;opacity:.75}
 .kpi.hl{grid-column:1/-1;background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
 .kpi.hl .l,.kpi.hl .s{color:var(--brand-ink);opacity:.8}
 .kpi.hl .v{color:var(--accent-hi)}
@@ -177,19 +184,27 @@ h2 .n{font:500 12px var(--f-mono);color:var(--muted);text-transform:none;letter-
 /* Bottom tab bar */
 .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);
   display:grid;grid-template-columns:repeat(3,1fr);padding-bottom:env(safe-area-inset-bottom,0px)}
-.tabbar button{border:0;background:none;padding:9px 4px 8px;display:grid;justify-items:center;gap:3px;font-size:11px;color:var(--muted);cursor:pointer}
-.tabbar button svg{width:22px;height:22px}
-.tabbar button[aria-current="page"]{color:var(--accent);font-weight:600}
+.tabbar a{text-decoration:none}
+.tabbar a,.tabbar button{border:0;background:none;padding:9px 4px 8px;display:grid;justify-items:center;gap:3px;font-size:11px;color:var(--muted);cursor:pointer}
+.tabbar a svg{width:22px;height:22px}
+.tabbar a[aria-current="page"]{color:var(--accent);font-weight:600}
 .foot{font-size:11.5px;color:var(--muted);text-align:center;margin:28px 0 0}
 
+@media (min-width:680px) and (max-width:759px){
+  .kpis{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .kpi.hl{grid-column:1/-1}
+  .kpi:not(.hl) .v{font-size:28px}
+}
 @media (min-width:760px){
-  .kpis{grid-template-columns:repeat(5,1fr)}
+  .kpis{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .kpi .v{font-size:clamp(26px,2.6vw,34px)}
   .kpi.hl{grid-column:auto}
   .grid2{grid-template-columns:1fr 1fr}
   .tabbar{display:none}
   .tabs-top{display:flex;gap:4px;max-width:1200px;margin:10px auto 0}
   .tabs-top button{border:0;background:transparent;color:var(--brand-ink);opacity:.75;padding:6px 14px;border-radius:6px;cursor:pointer;font:600 15px var(--f-display);letter-spacing:.05em;text-transform:uppercase}
-  .tabs-top button[aria-current="page"]{opacity:1;background:var(--accent)}
+  .tabs-top a{border:0;background:transparent;color:var(--brand-ink);opacity:.75;padding:6px 14px;border-radius:6px;cursor:pointer;font:600 15px var(--f-display);letter-spacing:.05em;text-transform:uppercase;text-decoration:none}
+  .tabs-top a[aria-current="page"]{opacity:1;background:var(--accent)}
   main{padding-bottom:40px}
   .news{grid-template-columns:1fr 1fr}
   .dev{grid-template-columns:1fr 1fr}
@@ -208,9 +223,9 @@ h2 .n{font:500 12px var(--f-mono);color:var(--muted);text-transform:none;letter-
     </button>
   </div>
   <nav class="tabs-top" aria-label="Sections">
-    <button data-view="dash" aria-current="page">Dashboard</button>
-    <button data-view="news">News</button>
-    <button data-view="devs">Developers</button>
+    <a href="#/dash" data-view="dash">Dashboard</a>
+    <a href="#/news" data-view="news">News</a>
+    <a href="#/devs" data-view="devs">Developers</a>
   </nav>
 </header>
 
@@ -259,9 +274,9 @@ h2 .n{font:500 12px var(--f-mono);color:var(--muted);text-transform:none;letter-
 </main>
 
 <nav class="tabbar" aria-label="Sections">
-  <button data-view="dash" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Dashboard</button>
-  <button data-view="news"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h13v16H6a2 2 0 0 1-2-2z"/><path d="M17 8h3v10a2 2 0 0 1-2 2"/><path d="M8 8h5M8 12h5M8 16h3"/></svg>News</button>
-  <button data-view="devs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 10h1M14 10h1M9 14h1M14 14h1"/></svg>Developers</button>
+  <a href="#/dash" data-view="dash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Dashboard</a>
+  <a href="#/news" data-view="news"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h13v16H6a2 2 0 0 1-2-2z"/><path d="M17 8h3v10a2 2 0 0 1-2 2"/><path d="M8 8h5M8 12h5M8 16h3"/></svg>News</a>
+  <a href="#/devs" data-view="devs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 10h1M14 10h1M9 14h1M14 14h1"/></svg>Developers</a>
 </nav>
 
 <script>
@@ -269,7 +284,9 @@ h2 .n{font:500 12px var(--f-mono);color:var(--muted);text-transform:none;letter-
 const EMIRATES=["Abu Dhabi","Dubai","Sharjah","Ajman","Umm Al Quwain","Ras Al Khaimah","Fujairah"];
 const UNITS=["Apartment","Villa","Townhouse","Mixed"];
 const UCLS={Apartment:"apt",Villa:"vil",Townhouse:"twn",Mixed:"mix"};
-const S={period:0,emirate:"",unit:"",dev:"",q:"",view:"dash"};
+const S={period:0,emirate:"",unit:"",dev:"",q:"",priced:false,view:"dash"};
+const VT="Villa & Townhouse";
+const unitOk=(r,u)=>u===VT?(r.unitType==="Villa"||r.unitType==="Townhouse"):r.unitType===u;
 let DATA=[],UPDATED="",PH=null;
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -293,7 +310,8 @@ function filtered(ignore){
   return DATA.filter(r=>{
     if(S.period&&ignore!=="period"){if(r.dateType!=="reported")return false;const d=(ref-new Date(r.date+"T00:00:00"))/864e5;if(d<0||d>S.period)return false;}
     if(S.emirate&&ignore!=="emirate"&&r.emirate!==S.emirate)return false;
-    if(S.unit&&ignore!=="unit"&&r.unitType!==S.unit)return false;
+    if(S.unit&&ignore!=="unit"&&!unitOk(r,S.unit))return false;
+    if(S.priced&&!r.priceFrom)return false;
     if(S.dev&&ignore!=="dev"&&r.developer!==S.dev)return false;
     if(q&&!(r.project+" "+r.developer+" "+r.community+" "+r.title+" "+r.emirate).toLowerCase().includes(q))return false;
     return true;
@@ -312,9 +330,10 @@ function chips(){
   $("#dev").value=S.dev;
   const parts=[];
   if(S.period)parts.push("published in last "+S.period+" days (undated register entries hidden)");if(S.emirate)parts.push(S.emirate);if(S.unit)parts.push(S.unit);
+  if(S.unit===VT)parts.splice(parts.indexOf(VT),1,"Villas & townhouses");if(S.priced)parts.push("priced launches only");
   if(S.dev)parts.push(S.dev);if(S.q)parts.push("“"+S.q+"”");
   $("#active").innerHTML=parts.length?`Showing: ${esc(parts.join(" · "))} <button id="clr">Clear all</button>`:"";
-  const c=$("#clr");if(c)c.onclick=()=>{Object.assign(S,{period:0,emirate:"",unit:"",dev:"",q:""});$("#q").value="";render();};
+  const c=$("#clr");if(c)c.onclick=()=>{Object.assign(S,{period:0,emirate:"",unit:"",dev:"",q:"",priced:false});$("#q").value="";go();};
 }
 
 function photoFor(r){
@@ -348,13 +367,14 @@ function dash(rows){
   const prices=rows.map(r=>r.priceFrom).filter(Boolean).sort((a,b)=>a-b);
   const med=prices.length?prices[Math.floor((prices.length-1)/2)]:null;
   const news=rows.filter(r=>r.dateType==="reported").length;
+  const base={...S,priced:false,unit:S.unit===VT?"":S.unit};
   $("#kpis").innerHTML=[
-    ["Projects",rows.length,`${news} news · ${rows.length-news} listed`,true],
-    ["Apartments",u.Apartment||0,"tower & residence launches"],
-    ["Villas & TH",(u.Villa||0)+(u.Townhouse||0),`${u.Mixed||0} mixed communit${(u.Mixed||0)===1?"y":"ies"}`],
-    ["Developers",devs.size,(n=>`across ${n} emirate${n===1?"":"s"}`)(new Set(rows.map(r=>r.emirate)).size)],
-    ["Median entry",med?fmtAED(med):"—",`${prices.length} priced launch${prices.length===1?"":"es"}`]
-  ].map(([l,v,s,h])=>`<div class="kpi ${h?"hl":""}"><div class="l">${l}</div><div class="v">${v}</div><div class="s">${s}</div></div>`).join("");
+    ["Projects",rows.length,`${news} news · ${rows.length-news} listed`,{...base,view:"news",unit:S.unit},true],
+    ["Apartments",u.Apartment||0,"tower & residence launches",{...base,view:"news",unit:"Apartment"}],
+    ["Villas & TH",(u.Villa||0)+(u.Townhouse||0),`${u.Mixed||0} mixed communit${(u.Mixed||0)===1?"y":"ies"}`,{...base,view:"news",unit:VT}],
+    ["Developers",devs.size,(n=>`across ${n} emirate${n===1?"":"s"}`)(new Set(rows.map(r=>r.emirate)).size),{...S,view:"devs"}],
+    ["Median entry",med?fmtAED(med).replace("AED ",'<small class="cur">AED</small>'):"—",`${prices.length} priced launch${prices.length===1?"":"es"}`,{...S,view:"news",priced:true}]
+  ].map(([l,v,s,st,h])=>`<a class="kpi ${h?"hl":""}" href="${toHash(st)}" title="Open ${esc(l)} in ${st.view==="devs"?"Developers":"News"}"><div class="l">${l}</div><div class="v">${v}</div><div class="s">${s}</div></a>`).join("");
 
   // Unit type
   const tot=rows.length||1;
@@ -399,7 +419,8 @@ function dash(rows){
 }
 
 function newsList(rows){
-  $("#news-n").textContent=rows.length+" items";
+  $("#news-n").textContent=rows.length+" items"+(S.priced?" · sorted by entry price":"");
+  if(S.priced){$("#newslist").innerHTML=rows.length?`<div class="news">${rows.slice().sort((a,b)=>a.priceFrom-b.priceFrom).map(card).join("")}</div>`:'<p class="empty">No priced launches match these filters.</p>';return}
   if(!rows.length){$("#newslist").innerHTML='<p class="empty">No items match these filters.</p>';return}
   const g={};rows.forEach(r=>(g[r.date]=g[r.date]||[]).push(r));
   $("#newslist").innerHTML=Object.keys(g).sort().reverse().map(d=>`<div class="date">${fmtDate(d)}</div><div class="news">${
@@ -417,36 +438,55 @@ function devList(rows){
     <div class="dsub">${UNITS.filter(x=>o.u[x]).map(x=>o.u[x]+" "+x.toLowerCase()).join(" · ")} — ${esc([...o.e].join(", "))}${o.p.length?` · from ${fmtAED(Math.min(...o.p))}`:""}</div></button>`).join("")||'<p class="empty">No developers match these filters.</p>';
 }
 
+// Routing — every view + filter combination has its own URL (#/news?emirate=Dubai&unit=Villa)
+function toHash(st){
+  const p=new URLSearchParams();
+  if(st.emirate)p.set("emirate",st.emirate);if(st.unit)p.set("unit",st.unit);if(st.dev)p.set("dev",st.dev);
+  if(st.period)p.set("period",st.period);if(st.priced)p.set("priced","1");if((st.q||"").trim())p.set("q",st.q.trim());
+  const qs=p.toString();return "#/"+(st.view||"dash")+(qs?"?"+qs:"");
+}
+function fromHash(){
+  const h=location.hash.replace(/^#\/?/,""),[v,qs]=h.split("?"),p=new URLSearchParams(qs||"");
+  S.view=["dash","news","devs"].includes(v)?v:"dash";
+  S.emirate=EMIRATES.includes(p.get("emirate"))?p.get("emirate"):"";
+  S.unit=UNITS.concat(VT).includes(p.get("unit"))?p.get("unit"):"";
+  S.dev=p.get("dev")||"";S.period=[7,30,90].includes(+p.get("period"))?+p.get("period"):0;
+  S.priced=p.get("priced")==="1";S.q=p.get("q")||"";$("#q").value=S.q;
+}
+function go(replace,top){ // write state to the URL, then render
+  const h=toHash(S);
+  if(h!==location.hash){replace?history.replaceState(null,"",h):history.pushState(null,"",h);}
+  render();if(top)scrollTo({top:0});
+}
+addEventListener("popstate",()=>{fromHash();render();});
+addEventListener("hashchange",()=>{fromHash();render();});
+
 function render(){
   const rows=filtered().sort((a,b)=>b.date.localeCompare(a.date)||(a.dateType==="reported"?-1:1));
   chips();dash(rows);newsList(rows);devList(rows);
   ["dash","news","devs"].forEach(v=>{$("#v-"+v).hidden=S.view!==v});
-  document.querySelectorAll("[data-view]").forEach(b=>{if(b.dataset.view===S.view)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});
+  document.querySelectorAll("[data-view]").forEach(b=>{b.setAttribute("href",toHash({...S,view:b.dataset.view}));if(b.dataset.view===S.view)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});
 }
 
 // Events
 document.addEventListener("click",ev=>{
+  const a=ev.target.closest("a[href^='#/']");
+  if(a){if(ev.metaKey||ev.ctrlKey||ev.shiftKey||ev.button)return;ev.preventDefault();history.pushState(null,"",a.getAttribute("href"));fromHash();render();scrollTo({top:0});return;}
   const t=ev.target.closest("button");if(!t)return;
-  if(t.closest("#emi")){S.emirate=t.dataset.v;render();}
-  else if(t.closest("#ut")){S.unit=t.dataset.v;render();}
-  else if(t.closest("#period")){S.period=+t.dataset.p;render();}
-  else if(t.dataset.view){S.view=t.dataset.view;render();scrollTo({top:0});}
-  else if(t.dataset.emi){S.emirate=S.emirate===t.dataset.emi?"":t.dataset.emi;render();}
-  else if(t.dataset.unit){S.unit=S.unit===t.dataset.unit?"":t.dataset.unit;render();}
-  else if(t.dataset.dev){S.dev=t.dataset.dev;S.view="news";render();scrollTo({top:0});}
+  if(t.closest("#emi")){S.emirate=t.dataset.v;go();}
+  else if(t.closest("#ut")){S.unit=t.dataset.v;go();}
+  else if(t.closest("#period")){S.period=+t.dataset.p;go();}
+  else if(t.dataset.emi){S.emirate=t.dataset.emi;S.view="news";go(false,true);}
+  else if(t.dataset.unit){S.unit=t.dataset.unit;S.priced=false;S.view="news";go(false,true);}
+  else if(t.dataset.dev){S.dev=t.dataset.dev;S.view="news";go(false,true);}
 });
-$("#dev").onchange=e=>{S.dev=e.target.value;render()};
-let qt;$("#q").oninput=e=>{clearTimeout(qt);qt=setTimeout(()=>{S.q=e.target.value;render()},150)};
+$("#dev").onchange=e=>{S.dev=e.target.value;go()};
+let qt;$("#q").oninput=e=>{clearTimeout(qt);qt=setTimeout(()=>{S.q=e.target.value;go(true)},250)};
 
-const V="?v="+Date.now(),get=u=>fetch(u+V).then(r=>{if(!r.ok)throw new Error(u);return r.json()});
-// Base archive + small daily files listed in data/manifest.json (daily task writes one file per day)
-Promise.all([get("data/news.json"),get("data/photos.json").catch(()=>null),get("data/manifest.json").catch(()=>({files:[]}))]).then(async([j,ph,m])=>{PH=ph;
-  const daily=await Promise.all((m.files||[]).map(f=>get("data/"+f).catch(()=>({items:[]}))));
-  const seen=new Set(),all=[];
-  [j.items,...daily.map(d=>d.items||[])].flat().forEach(r=>{const k=(r.developer+"|"+r.project).toLowerCase();if(seen.has(k))return;seen.add(k);all.push(r)});
-  all.forEach((r,i)=>{if(r.id==null)r.id=1000+i});
-  DATA=all;UPDATED=[j.updated,m.updated].filter(Boolean).sort().pop();$("#upd").textContent=fmtDate(UPDATED).toUpperCase();
+Promise.all([fetch("data/news.json?v="+Date.now()).then(r=>r.json()),fetch("data/photos.json?v="+Date.now()).then(r=>r.json()).catch(()=>null)]).then(([j,ph])=>{PH=ph;
+  DATA=j.items;UPDATED=j.updated;$("#upd").textContent=fmtDate(UPDATED).toUpperCase();
   [...new Set(DATA.map(r=>r.developer))].sort().forEach(d=>{const o=document.createElement("option");o.value=o.textContent=d;$("#dev").append(o)});
+  fromHash();if(S.dev&&!DATA.some(r=>r.developer===S.dev))S.dev="";
   render();
 }).catch(()=>{$("#v-dash").innerHTML='<p class="empty">Could not load data/news.json.</p>'});
 })();
