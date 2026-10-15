@@ -32,7 +32,9 @@
    "summary": "Dh3.5bn community of about 1,100 townhouses, twin and standalone villas and mansions (mostly 3–6 BR); show villas are now complete for buyers to view.",
    "source": "Gulf News",
    "url": "https://gulfnews.com/amp/story/uae/sharjah/sharjah-housing-gets-1100-new-family-homes-1.500697787",
-   "stage": "existing"
+   "stage": "existing",
+   "units": 1100,
+   "specSource": "https://gulfnews.com/amp/story/uae/sharjah/sharjah-housing-gets-1100-new-family-homes-1.500697787"
   },
   {
    "id": 47,

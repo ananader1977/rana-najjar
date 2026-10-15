@@ -51,7 +51,9 @@
     "post": 0,
     "postMonths": null,
     "source": "https://www.propertyfinder.ae/en/new-projects/nakheel/bay-estate"
-   }
+   },
+   "units": 357,
+   "specSource": "https://metropolitan.realestate/dubai-islands/bay-estate/"
   },
   {
    "date": "2026-10-05",
@@ -281,7 +283,9 @@
     "post": 30,
     "postMonths": 24,
     "source": "https://ezre.ae/projects/lily-tower"
-   }
+   },
+   "units": 691,
+   "specSource": "https://metropolitan.realestate/downtown-ajman/tiger-lily-tower-tiger-properties-tiger-downtown-ajman/"
   },
   {
    "date": "2026-10-14",
@@ -506,7 +510,9 @@
     "post": 0,
     "postMonths": null,
     "source": "https://ezre.ae/projects/binghatti-hillviews"
-   }
+   },
+   "units": 764,
+   "specSource": "https://metropolitan.realestate/dubai-science-park/hillviews/"
   },
   {
    "date": "2026-10-14",
@@ -893,7 +899,9 @@
     "post": 0,
     "postMonths": null,
     "source": "https://ezre.ae/projects/mandarin-oriental-residences"
-   }
+   },
+   "units": 226,
+   "specSource": "https://abu-dhabi.realestate/saadiyat-island/mandarin-oriental-residences"
   },
   {
    "date": "2026-10-14",
@@ -2072,7 +2080,9 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 4.40m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "units": 215,
+   "specSource": "https://metropolitan.realestate/wasl-1/nine-collective-wasl-zabeel-park-dubai/"
   },
   {
    "id": 84,
