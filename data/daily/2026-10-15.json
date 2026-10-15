@@ -71,7 +71,16 @@
    "sizeMinSqft": 926,
    "sizeMaxSqft": 5802,
    "estSqft": 555000.0,
-   "specSource": "https://metropolitan.realestate/al-maryah-island/the-ritz-carlton-residences-saas-properties-al-maryah-island-abu-dhabi/"
+   "specSource": "https://metropolitan.realestate/al-maryah-island/the-ritz-carlton-residences-saas-properties-al-maryah-island-abu-dhabi/",
+   "paymentPlan": {
+    "label": "40/60",
+    "booking": 10,
+    "pre": 40,
+    "handover": 60,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/the-ritz-carlton-residences-by-saas"
+   }
   },
   {
    "id": 90,
@@ -93,7 +102,16 @@
    "sizeMinSqft": 1347,
    "sizeMaxSqft": 2198,
    "estSqft": 624000.0,
-   "specSource": "https://metropolitan.realestate/al-ghadeer/al-ghadeer-gardens-new-release-aldar-seih-sedeirah-abu-dhabi/"
+   "specSource": "https://metropolitan.realestate/al-ghadeer/al-ghadeer-gardens-new-release-aldar-seih-sedeirah-abu-dhabi/",
+   "paymentPlan": {
+    "label": "55/45",
+    "booking": 5,
+    "pre": 55,
+    "handover": 45,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/al-ghadeer-gardens-2"
+   }
   },
   {
    "id": 91,
@@ -110,7 +128,16 @@
    "summary": "New phase of the Hayat community in Dubai South with four-bedroom townhouses; payment plan of 10% down, 55% during construction, 25% on handover and 10% post-handover, with handover expected Q1 2029.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "40/30/30",
+    "booking": 5,
+    "pre": 40,
+    "handover": 30,
+    "post": 30,
+    "postMonths": 24,
+    "source": "https://ezre.ae/projects/hayat-7"
+   }
   }
  ]
 }

@@ -16,7 +16,16 @@
    "source": "Metropolitan Premium Properties",
    "url": "https://metropolitan.realestate/media/news/",
    "id": 1,
-   "stage": "existing"
+   "stage": "existing",
+   "paymentPlan": {
+    "label": "35/65",
+    "booking": 5,
+    "pre": 35,
+    "handover": 65,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://metropolitan.realestate/yas-island/manchester-city-yas-residences-by-ohana-yas-canal-abu-dhabi/"
+   }
   },
   {
    "date": "2026-10-06",
@@ -33,7 +42,16 @@
    "source": "Zawya",
    "url": "https://www.zawya.com/en/business/uae-realty-market/nakheel-unveils-bay-estate-residential-community-at-dubai-islands-1510568",
    "id": 2,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "25/55/20",
+    "booking": 25,
+    "pre": 80,
+    "handover": 20,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://www.propertyfinder.ae/en/new-projects/nakheel/bay-estate"
+   }
   },
   {
    "date": "2026-10-05",
@@ -89,7 +107,16 @@
    "sizeMinSqft": 4704,
    "sizeMaxSqft": 6555,
    "estSqft": 1644000.0,
-   "specSource": "https://metropolitan.realestate/yas-island/yas-riva-reserve-aldar-yas-island-abu-dhabi/"
+   "specSource": "https://metropolitan.realestate/yas-island/yas-riva-reserve-aldar-yas-island-abu-dhabi/",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": 5,
+    "pre": 50,
+    "handover": 50,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/yas-riva-reserve"
+   }
   },
   {
    "date": "2026-09-17",
@@ -111,7 +138,16 @@
    "sizeMinSqft": 5403,
    "sizeMaxSqft": 6824,
    "estSqft": 2146000.0,
-   "specSource": "https://metropolitan.realestate/saadiyat-island/talay-marsa-al-saadiyat/"
+   "specSource": "https://metropolitan.realestate/saadiyat-island/talay-marsa-al-saadiyat/",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": 5,
+    "pre": 50,
+    "handover": 50,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/talay-talay-beach-at-marsa-al-saadiyat"
+   }
   },
   {
    "date": "2026-09-07",
@@ -133,7 +169,16 @@
    "sizeMinSqft": 753,
    "sizeMaxSqft": 2239,
    "estSqft": 1164000.0,
-   "specSource": "https://metropolitan.realestate/saadiyat-island/sei-saadiyat-aldar-saadiyat-cultural-district/"
+   "specSource": "https://metropolitan.realestate/saadiyat-island/sei-saadiyat-aldar-saadiyat-cultural-district/",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": 5,
+    "pre": 50,
+    "handover": 50,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://saadiyatkeys.com/insights/weekly/2026-10-02/"
+   }
   },
   {
    "date": "2026-09-14",
@@ -167,7 +212,16 @@
    "source": "Bloom Holding",
    "url": "https://bloomholding.com/press-releases/bloom-holding-launches-final-phase-of-bloom-living-alhambra",
    "id": 9,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "40/60",
+    "booking": 5,
+    "pre": 40,
+    "handover": 60,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/bloom-living-alhambra"
+   }
   },
   {
    "date": "2026-08-25",
@@ -218,7 +272,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 12,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "60/10/30",
+    "booking": 10,
+    "pre": 60,
+    "handover": 10,
+    "post": 30,
+    "postMonths": 24,
+    "source": "https://ezre.ae/projects/lily-tower"
+   }
   },
   {
    "date": "2026-10-14",
@@ -235,7 +298,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 13,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "60/10/30",
+    "booking": 20,
+    "pre": 60,
+    "handover": 10,
+    "post": 30,
+    "postMonths": 30,
+    "source": "https://ezre.ae/projects/lore-via-collection"
+   }
   },
   {
    "date": "2026-10-14",
@@ -252,7 +324,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 14,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "41/10/49",
+    "booking": 5,
+    "pre": 41,
+    "handover": 10,
+    "post": 49,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/sky-gardens-tower"
+   }
   },
   {
    "date": "2026-10-14",
@@ -269,7 +350,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 15,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "20/80",
+    "booking": 20,
+    "pre": 20,
+    "handover": 80,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/lumina-by-vision"
+   }
   },
   {
    "date": "2026-10-14",
@@ -286,7 +376,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 16,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "50/10/40",
+    "booking": 10,
+    "pre": 50,
+    "handover": 10,
+    "post": 40,
+    "postMonths": 48,
+    "source": "https://ezre.ae/projects/aris-by-grid"
+   }
   },
   {
    "date": "2026-10-14",
@@ -303,7 +402,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 17,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "74/1/25",
+    "booking": 15,
+    "pre": 74,
+    "handover": 1,
+    "post": 25,
+    "postMonths": 25,
+    "source": "https://ezre.ae/projects/samana-south-haven-2"
+   }
   },
   {
    "date": "2026-10-14",
@@ -320,7 +428,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 18,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "25/75",
+    "booking": 25,
+    "pre": 25,
+    "handover": 75,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/reeman-residence-01"
+   }
   },
   {
    "date": "2026-10-14",
@@ -354,7 +471,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 20,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": 20,
+    "pre": 50,
+    "handover": 50,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/kore-by-imtiaz"
+   }
   },
   {
    "date": "2026-10-14",
@@ -371,7 +497,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 21,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "70/30",
+    "booking": 20,
+    "pre": 70,
+    "handover": 30,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/binghatti-hillviews"
+   }
   },
   {
    "date": "2026-10-14",
@@ -388,7 +523,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 22,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "100% by handover",
+    "booking": 10,
+    "pre": 100,
+    "handover": 0,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/oasiz-2"
+   }
   },
   {
    "date": "2026-10-14",
@@ -405,7 +549,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 23,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "45/55",
+    "booking": 15,
+    "pre": 45,
+    "handover": 55,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/mars-residences"
+   }
   },
   {
    "date": "2026-10-14",
@@ -456,7 +609,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 26,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "30/70",
+    "booking": 30,
+    "pre": 30,
+    "handover": 70,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/dolce-residences-by-wyndham"
+   }
   },
   {
    "date": "2026-10-14",
@@ -473,7 +635,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 27,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "30/70",
+    "booking": 20,
+    "pre": 30,
+    "handover": 70,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/verso"
+   }
   },
   {
    "date": "2026-10-14",
@@ -490,7 +661,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 28,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "30/70",
+    "booking": 10,
+    "pre": 30,
+    "handover": 70,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/shahrukhz-residences-by-danube-danube"
+   }
   },
   {
    "date": "2026-10-14",
@@ -507,7 +687,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 29,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "20/80",
+    "booking": 10,
+    "pre": 20,
+    "handover": 80,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/adeba-azizi-residence-creek-views-3"
+   }
   },
   {
    "date": "2026-10-14",
@@ -524,7 +713,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 30,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "80/20",
+    "booking": 10,
+    "pre": 80,
+    "handover": 20,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/marina-views"
+   }
   },
   {
    "date": "2026-10-14",
@@ -546,7 +744,16 @@
    "sizeMinSqft": 2345,
    "sizeMaxSqft": 2404,
    "estSqft": 221000.0,
-   "specSource": "https://metropolitan.realestate/damac-hills-2/violet-4-damac-hills-2-dubai/"
+   "specSource": "https://metropolitan.realestate/damac-hills-2/violet-4-damac-hills-2-dubai/",
+   "paymentPlan": {
+    "label": "60/40",
+    "booking": 20,
+    "pre": 60,
+    "handover": 40,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://metropolitan.realestate/damac-hills-2/violet-4-damac-hills-2-dubai/"
+   }
   },
   {
    "date": "2026-10-14",
@@ -563,7 +770,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 32,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "25/75",
+    "booking": 10,
+    "pre": 25,
+    "handover": 75,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/sukoon-phase-i"
+   }
   },
   {
    "date": "2026-10-14",
@@ -585,7 +801,16 @@
    "sizeMinSqft": 857,
    "sizeMaxSqft": 3215,
    "estSqft": 1101000.0,
-   "specSource": "https://metropolitan.realestate/wasl-1/avenue-park-towers-ii-wasl-wasl-1-dubai/"
+   "specSource": "https://metropolitan.realestate/wasl-1/avenue-park-towers-ii-wasl-wasl-1-dubai/",
+   "paymentPlan": {
+    "label": "40/60",
+    "booking": 10,
+    "pre": 40,
+    "handover": 60,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/avenue-park-towers-ii"
+   }
   },
   {
    "date": "2026-10-14",
@@ -607,7 +832,16 @@
    "sizeMinSqft": 631,
    "sizeMaxSqft": 1864,
    "estSqft": 156000.0,
-   "specSource": "https://metropolitan.realestate/ramhan-island/the-bristol-residences-eagle-hills-ramhan-island-abu-dhabi/"
+   "specSource": "https://metropolitan.realestate/ramhan-island/the-bristol-residences-eagle-hills-ramhan-island-abu-dhabi/",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": 5,
+    "pre": 50,
+    "handover": 50,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/bristol-hotel-residences-at-ramhan-island"
+   }
   },
   {
    "date": "2026-10-14",
@@ -624,7 +858,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 35,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": 10,
+    "pre": 50,
+    "handover": 50,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/bashayer-residences"
+   }
   },
   {
    "date": "2026-10-14",
@@ -641,7 +884,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 36,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "30/70",
+    "booking": 15,
+    "pre": 30,
+    "handover": 70,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/mandarin-oriental-residences"
+   }
   },
   {
    "date": "2026-10-14",
@@ -692,7 +944,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 39,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "25/75",
+    "booking": 5,
+    "pre": 25,
+    "handover": 75,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/wadeem-gardens"
+   }
   },
   {
    "date": "2026-10-14",
@@ -726,7 +987,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 41,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "60/40",
+    "booking": 20,
+    "pre": 60,
+    "handover": 40,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/solaya-8"
+   }
   },
   {
    "date": "2026-10-14",
@@ -743,7 +1013,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 42,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "68/32",
+    "booking": 20,
+    "pre": 68,
+    "handover": 32,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/palm-01-by-binghatti"
+   }
   },
   {
    "date": "2026-10-14",
@@ -760,7 +1039,16 @@
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
    "id": 43,
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": 5,
+    "pre": 50,
+    "handover": 50,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/sorrento"
+   }
   },
   {
    "date": "2026-10-14",
@@ -794,7 +1082,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 580k.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": 20,
+    "pre": 50,
+    "handover": 0,
+    "post": 50,
+    "postMonths": 60,
+    "source": "https://ezre.ae/projects/lenjawi-diamond"
+   }
   },
   {
    "id": 46,
@@ -811,7 +1108,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 650k.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "55/1/44",
+    "booking": 20,
+    "pre": 55,
+    "handover": 1,
+    "post": 44,
+    "postMonths": 84,
+    "source": "https://ezre.ae/projects/empire-downtown-jebel-ali"
+   }
   },
   {
    "id": 47,
@@ -828,7 +1134,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 663k.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": 20,
+    "pre": 50,
+    "handover": 0,
+    "post": 50,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/77s-tower"
+   }
   },
   {
    "id": 48,
@@ -845,7 +1160,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 697k.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "60/40",
+    "booking": 20,
+    "pre": 60,
+    "handover": 40,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/reef-995"
+   }
   },
   {
    "id": 49,
@@ -862,7 +1186,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 699k.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "30/70",
+    "booking": 5,
+    "pre": 30,
+    "handover": 70,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/native-haus"
+   }
   },
   {
    "id": 50,
@@ -879,7 +1212,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 702k.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "60/40",
+    "booking": 20,
+    "pre": 60,
+    "handover": 40,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/cavendish-square"
+   }
   },
   {
    "id": 51,
@@ -896,7 +1238,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Offers studio to 2.5-bedroom homes; starting price listed at about AED 728k.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "40/60",
+    "booking": 10,
+    "pre": 40,
+    "handover": 60,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/reeman-residence-02"
+   }
   },
   {
    "id": 52,
@@ -913,7 +1264,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 798k.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "56/1/43",
+    "booking": 20,
+    "pre": 56,
+    "handover": 1,
+    "post": 43,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/yigo-luxe"
+   }
   },
   {
    "id": 53,
@@ -930,7 +1290,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 812k.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "55/5/40",
+    "booking": 20,
+    "pre": 55,
+    "handover": 5,
+    "post": 40,
+    "postMonths": 24,
+    "source": "https://ezre.ae/projects/weybridge-gardens-2"
+   }
   },
   {
    "id": 54,
@@ -952,7 +1321,16 @@
    "sizeMinSqft": 348,
    "sizeMaxSqft": 1931,
    "estSqft": 879000.0,
-   "specSource": "https://metropolitan.realestate/al-jaddaff/binghatti-starfall-al-jaddaf-dubai/"
+   "specSource": "https://metropolitan.realestate/al-jaddaff/binghatti-starfall-al-jaddaf-dubai/",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": 10,
+    "pre": 50,
+    "handover": 50,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/binghatti-starfall"
+   }
   },
   {
    "id": 55,
@@ -969,7 +1347,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 833k.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "41/10/49",
+    "booking": 5,
+    "pre": 41,
+    "handover": 10,
+    "post": 49,
+    "postMonths": 36,
+    "source": "https://ezre.ae/projects/one-678-residences"
+   }
   },
   {
    "id": 56,
@@ -986,7 +1373,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Offers 1- to 2.5-bedroom homes; starting price listed at about AED 850k.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": 50,
+    "pre": 50,
+    "handover": 50,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/lunara-tower"
+   }
   },
   {
    "id": 57,
@@ -1003,7 +1399,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 855k.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "5/95",
+    "booking": 5,
+    "pre": 100,
+    "handover": 0,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/al-aamra-3-tower"
+   }
   },
   {
    "id": 58,
@@ -1025,7 +1430,16 @@
    "sizeMinSqft": 368,
    "sizeMaxSqft": 1082,
    "estSqft": 447000.0,
-   "specSource": "https://metropolitan.realestate/al-marjan-island/the-views-ardee-developments-al-marjan-island-ras-al-khaimah/"
+   "specSource": "https://metropolitan.realestate/al-marjan-island/the-views-ardee-developments-al-marjan-island-ras-al-khaimah/",
+   "paymentPlan": {
+    "label": "40/10/50",
+    "booking": 10,
+    "pre": 40,
+    "handover": 10,
+    "post": 50,
+    "postMonths": 36,
+    "source": "https://ezre.ae/projects/the-views"
+   }
   },
   {
    "id": 59,
@@ -1042,7 +1456,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 991k.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "30/70",
+    "booking": 10,
+    "pre": 30,
+    "handover": 70,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/arche-residences-evera-development"
+   }
   },
   {
    "id": 60,
@@ -1059,7 +1482,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 999k.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "30/70",
+    "booking": 10,
+    "pre": 30,
+    "handover": 70,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/latitude-25"
+   }
   },
   {
    "id": 61,
@@ -1076,7 +1508,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 1.10m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "100% by handover",
+    "booking": 20,
+    "pre": 100,
+    "handover": 0,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/ete-rea-by-zoya"
+   }
   },
   {
    "id": 62,
@@ -1093,7 +1534,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 1.10m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "56/44",
+    "booking": 10,
+    "pre": 56,
+    "handover": 0,
+    "post": 44,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/infinity-tower"
+   }
   },
   {
    "id": 63,
@@ -1110,7 +1560,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 1.20m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": 20,
+    "pre": 50,
+    "handover": 50,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/the-orchard-place-towers-d-e"
+   }
   },
   {
    "id": 64,
@@ -1127,7 +1586,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 1.30m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "50/20/30",
+    "booking": 10,
+    "pre": 50,
+    "handover": 20,
+    "post": 30,
+    "postMonths": 24,
+    "source": "https://ezre.ae/projects/future-avenue"
+   }
   },
   {
    "id": 65,
@@ -1144,7 +1612,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 1.30m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": 10,
+    "pre": 50,
+    "handover": 50,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/the-orchard-place-tower-c"
+   }
   },
   {
    "id": 66,
@@ -1166,7 +1643,16 @@
    "sizeMinSqft": 441,
    "sizeMaxSqft": 1884,
    "estSqft": 1937000.0,
-   "specSource": "https://metropolitan.realestate/dubai-science-park/binghatti-hills/"
+   "specSource": "https://metropolitan.realestate/dubai-science-park/binghatti-hills/",
+   "paymentPlan": {
+    "label": "70/30",
+    "booking": 20,
+    "pre": 70,
+    "handover": 30,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://metropolitan.realestate/dubai-science-park/binghatti-hills/"
+   }
   },
   {
    "id": 67,
@@ -1200,7 +1686,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 1.70m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "30/70",
+    "booking": 15,
+    "pre": 30,
+    "handover": 70,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/celeste-heights"
+   }
   },
   {
    "id": 69,
@@ -1217,7 +1712,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 1.80m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": 20,
+    "pre": 50,
+    "handover": 50,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/raw-district-phase-2"
+   }
   },
   {
    "id": 70,
@@ -1234,7 +1738,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 1.80m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "55/14/31",
+    "booking": 10,
+    "pre": 55,
+    "handover": 14,
+    "post": 31,
+    "postMonths": 31,
+    "source": "https://ezre.ae/projects/sanctuary"
+   }
   },
   {
    "id": 71,
@@ -1251,7 +1764,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 1.90m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "20/80",
+    "booking": 20,
+    "pre": 20,
+    "handover": 80,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/epoque"
+   }
   },
   {
    "id": 72,
@@ -1268,7 +1790,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 2.00m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "20/40/40",
+    "booking": 10,
+    "pre": 20,
+    "handover": 40,
+    "post": 40,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/miraggio-phases-1-and-2"
+   }
   },
   {
    "id": 73,
@@ -1290,7 +1821,16 @@
    "sizeMinSqft": 1252,
    "sizeMaxSqft": 1585,
    "estSqft": 113000.0,
-   "specSource": "https://metropolitan.realestate/dubai-south/tessera-residences/"
+   "specSource": "https://metropolitan.realestate/dubai-south/tessera-residences/",
+   "paymentPlan": {
+    "label": "35/65",
+    "booking": 10,
+    "pre": 35,
+    "handover": 65,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/tessera-al-ghurair"
+   }
   },
   {
    "id": 74,
@@ -1324,7 +1864,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 2.40m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "40/60",
+    "booking": 20,
+    "pre": 40,
+    "handover": 60,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/royal-yacht-club-residence"
+   }
   },
   {
    "id": 76,
@@ -1341,7 +1890,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 2.70m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": null,
+    "pre": 50,
+    "handover": 50,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/the-bay-interiors-by-missoni"
+   }
   },
   {
    "id": 77,
@@ -1358,7 +1916,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 3.40m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "55/10/35",
+    "booking": 20,
+    "pre": 55,
+    "handover": 10,
+    "post": 35,
+    "postMonths": 30,
+    "source": "https://ezre.ae/projects/kempinski-marina-residences"
+   }
   },
   {
    "id": 78,
@@ -1375,7 +1942,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 3.50m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "45/55",
+    "booking": 15,
+    "pre": 45,
+    "handover": 55,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/juman-2"
+   }
   },
   {
    "id": 79,
@@ -1392,7 +1968,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 3.50m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": 20,
+    "pre": 50,
+    "handover": 50,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/the-luxury-collection"
+   }
   },
   {
    "id": 80,
@@ -1409,7 +1994,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 3.50m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": 20,
+    "pre": 50,
+    "handover": 50,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/sky-vista"
+   }
   },
   {
    "id": 81,
@@ -1426,7 +2020,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 3.90m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "60/40",
+    "booking": null,
+    "pre": 60,
+    "handover": 0,
+    "post": 40,
+    "postMonths": 36,
+    "source": "https://metropolitan.realestate/al-marjan-island/park-beach-residence/"
+   }
   },
   {
    "id": 82,
@@ -1443,7 +2046,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Starting price listed at about AED 4.30m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "30/70",
+    "booking": 5,
+    "pre": 30,
+    "handover": 70,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/juman-1"
+   }
   },
   {
    "id": 83,
@@ -1477,7 +2089,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Offers five-bedroom homes; starting price listed at about AED 35.00m.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "60/40",
+    "booking": null,
+    "pre": 60,
+    "handover": 40,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/villa-55"
+   }
   },
   {
    "id": 85,
@@ -1494,7 +2115,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Price not yet published.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "30/70",
+    "booking": null,
+    "pre": 30,
+    "handover": 70,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/azizi-riviera-53"
+   }
   },
   {
    "id": 86,
@@ -1511,7 +2141,16 @@
    "summary": "Added to the UAE new-launch register in the 30 days to 15 Oct 2026. Price not yet published.",
    "source": "ezre.ae launch register",
    "url": "https://ezre.ae/new-launches",
-   "stage": "launch"
+   "stage": "launch",
+   "paymentPlan": {
+    "label": "20/80",
+    "booking": 20,
+    "pre": 20,
+    "handover": 80,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/marlin-icon"
+   }
   },
   {
    "id": 87,

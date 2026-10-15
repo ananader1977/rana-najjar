@@ -174,11 +174,21 @@ table.share .bar-col{min-width:120px;white-space:nowrap}
 table.share .bar-col b{font:500 12px var(--f-mono);margin-left:6px}
 .mini{display:inline-block;vertical-align:middle;width:70px;height:8px;background:var(--surface-2);border-radius:4px;overflow:hidden}
 .mini i{display:block;height:100%;background:var(--accent)}
-@media (max-width:600px){.mini{display:none}table.share{font-size:12.5px}table.share th,table.share td{padding:7px 6px}table.share .bar-col{min-width:0}table.share th.bar-col{white-space:normal}}
+@media (max-width:600px){.mini{display:none}table.share{font-size:12.5px}table.share th,table.share td{padding:7px 6px}table.share th:nth-child(2),table.share td:nth-child(2){display:none}table.share .tp{font-size:11px}table.share .tp small{font-size:9.5px}table.share td:first-child{overflow-wrap:anywhere;hyphens:auto}table.share .bar-col{min-width:0}table.share th.bar-col{white-space:normal}}
 .more-btn{display:block;margin:10px auto 0;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 16px;font-size:13px;cursor:pointer}
 .share-card .note{padding:0 12px}
 .sqft{font:500 11.5px var(--f-mono);color:var(--fg);text-decoration:none;border-bottom:1px dotted var(--muted)}
 .sqft:hover{color:var(--accent)}
+.plan{display:grid;grid-template-columns:auto 1fr;gap:3px 8px;align-items:center;margin:0 0 9px;text-decoration:none;color:inherit}
+.plan .pl{font:600 12px/1 var(--f-mono);background:var(--chip);padding:3px 6px;border-radius:4px}
+.plan .pbar{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--surface-2)}
+.plan .pbar i{display:block;height:100%}
+.plan .p1{background:var(--apt)}.plan .p2{background:var(--accent)}.plan .p3{background:var(--twn)}
+.plan .pt{grid-column:1/-1;font-size:11.5px;color:var(--muted)}
+.plan .pt b{color:var(--fg);font-weight:600}
+.plan:hover .pl{background:var(--accent);color:var(--accent-ink)}
+table.share .tp{font:500 12px var(--f-mono);white-space:nowrap}
+table.share .tp small{display:block;font-size:10.5px;color:var(--muted);font-family:var(--f-body)}
 .tag.ut{border:1px solid var(--line);background:none}
 .pnote{font-size:11.5px;color:var(--muted);align-self:center;flex:none}
 .pub{display:flex;align-items:center;gap:5px;font:500 12px/1.2 var(--f-mono);color:var(--accent);margin:0 0 5px}
@@ -259,6 +269,7 @@ table.share .bar-col b{font:500 12px var(--f-mono);margin-left:6px}
   <div class="row" id="emi"><span class="lbl">Emirate</span></div>
   <div class="row" id="stg"><span class="lbl">Type</span></div>
   <div class="row" id="ut"><span class="lbl">Unit</span></div>
+  <div class="row" id="pay"><span class="lbl">Payment</span></div>
   <div class="ctl">
     <select id="dev" aria-label="Developer"><option value="">All developers</option></select>
     <input id="q" type="search" placeholder="Search project, community…" aria-label="Search">
@@ -309,9 +320,11 @@ table.share .bar-col b{font:500 12px var(--f-mono);margin-left:6px}
 const EMIRATES=["Abu Dhabi","Dubai","Sharjah","Ajman","Umm Al Quwain","Ras Al Khaimah","Fujairah"];
 const UNITS=["Apartment","Villa","Townhouse","Mixed"];
 const UCLS={Apartment:"apt",Villa:"vil",Townhouse:"twn",Mixed:"mix"};
-const S={period:0,emirate:"",unit:"",stage:"",dev:"",q:"",priced:false,view:"dash"};
+const S={period:0,emirate:"",unit:"",stage:"",pay:"",dev:"",q:"",priced:false,view:"dash"};
 const STAGES=[["launch","New launches"],["existing","Existing projects"]];
 const stageOf=r=>r.stage==="existing"?"existing":"launch";
+const PAYS=[["post","Post-handover"],["handover","Paid by handover"],["none","Not published"]];
+const payOf=r=>!r.paymentPlan?"none":r.paymentPlan.post>0?"post":"handover";
 const VT="Villa & Townhouse";
 const unitOk=(r,u)=>u===VT?(r.unitType==="Villa"||r.unitType==="Townhouse"):r.unitType===u;
 let DATA=[],UPDATED="",PH=null;
@@ -340,6 +353,7 @@ function filtered(ignore){
     if(S.unit&&ignore!=="unit"&&!unitOk(r,S.unit))return false;
     if(S.priced&&!r.priceFrom)return false;
     if(S.stage&&ignore!=="stage"&&stageOf(r)!==S.stage)return false;
+    if(S.pay&&ignore!=="pay"&&payOf(r)!==S.pay)return false;
     if(S.dev&&ignore!=="dev"&&r.developer!==S.dev)return false;
     if(q&&!(r.project+" "+r.developer+" "+r.community+" "+r.title+" "+r.emirate).toLowerCase().includes(q))return false;
     return true;
@@ -354,17 +368,20 @@ function chips(){
     .map(([v,l,n])=>`<button class="chip" data-v="${esc(v)}" aria-pressed="${S.emirate===v}">${esc(l)}<small>${n}</small></button>`).join("");
   $("#ut").innerHTML='<span class="lbl">Unit</span>'+[["","All",tot2]].concat(UNITS.map(x=>[x,x,u[x]||0]))
     .map(([v,l,n])=>`<button class="chip" data-v="${esc(v)}" aria-pressed="${S.unit===v}">${esc(l)}<small>${n}</small></button>`).join("");
+  const pf=filtered("pay"),pc={post:0,handover:0,none:0};pf.forEach(r=>pc[payOf(r)]++);
+  $("#pay").innerHTML='<span class="lbl">Payment</span>'+[["","All",pf.length]].concat(PAYS.map(([k,l])=>[k,l,pc[k]]))
+    .map(([v,l,n])=>`<button class="chip" data-v="${esc(v)}" aria-pressed="${S.pay===v}">${esc(l)}<small>${n}</small></button>`).join("");
   const sf=filtered("stage"),sc={launch:0,existing:0};sf.forEach(r=>sc[stageOf(r)]++);
   $("#stg").innerHTML='<span class="lbl">Type</span>'+[["","All",sf.length]].concat(STAGES.map(([k,l])=>[k,l,sc[k]]))
     .map(([v,l,n])=>`<button class="chip" data-v="${esc(v)}" aria-pressed="${S.stage===v}">${esc(l)}<small>${n}</small></button>`).join("");
   document.querySelectorAll("#period button").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.p===S.period));
   $("#dev").value=S.dev;
   const parts=[];
-  if(S.period)parts.push("published in last "+S.period+" days (undated register entries hidden)");if(S.stage)parts.push(S.stage==="launch"?"New launches":"Existing projects");if(S.emirate)parts.push(S.emirate);if(S.unit)parts.push(S.unit);
+  if(S.period)parts.push("published in last "+S.period+" days (undated register entries hidden)");if(S.stage)parts.push(S.stage==="launch"?"New launches":"Existing projects");if(S.pay)parts.push({post:"Post-handover plans",handover:"Paid by handover",none:"No published plan"}[S.pay]);if(S.emirate)parts.push(S.emirate);if(S.unit)parts.push(S.unit);
   if(S.unit===VT)parts.splice(parts.indexOf(VT),1,"Villas & townhouses");if(S.priced)parts.push("priced launches only");
   if(S.dev)parts.push(S.dev);if(S.q)parts.push("“"+S.q+"”");
   $("#active").innerHTML=parts.length?`Showing: ${esc(parts.join(" · "))} <button id="clr">Clear all</button>`:"";
-  const c=$("#clr");if(c)c.onclick=()=>{Object.assign(S,{period:0,emirate:"",unit:"",stage:"",dev:"",q:"",priced:false});$("#q").value="";go();};
+  const c=$("#clr");if(c)c.onclick=()=>{Object.assign(S,{period:0,emirate:"",unit:"",stage:"",pay:"",dev:"",q:"",priced:false});$("#q").value="";go();};
 }
 
 function photoFor(r){
@@ -377,6 +394,13 @@ function photoFor(r){
   const list=f.default;return pick(list[(r.id||0)%list.length]);
 }
 function pick(k){const p=PH.photos[k];return p?{src:p.src,label:p.label,credit:p.author+" · "+p.license,page:p.page}:null}
+function planHtml(p){
+  if(!p)return "";
+  const seg=(v,c,t)=>v?`<i class="${c}" style="width:${v}%" title="${t}: ${v}%"></i>`:"";
+  return `<a class="plan" href="${esc(p.source)}" target="_blank" rel="noopener" title="Source of payment plan">
+    <span class="pl">${esc(p.label)}</span><span class="pbar">${seg(p.pre,"p1","Before handover")}${seg(p.handover,"p2","On handover")}${seg(p.post,"p3","Post-handover")}</span>
+    <span class="pt">${p.pre}% before${p.booking!=null?` (${p.booking}% booking)`:""} · ${p.handover}% handover${p.post?` · <b>${p.post}% post${p.postMonths?` / ${p.postMonths} mo`:""}</b>`:""}</span></a>`;
+}
 function card(r){
   const p=photoFor(r);
   return `<article class="item ${r.dateType==="listed"?"listed":""}">
@@ -388,6 +412,7 @@ function card(r){
     <div class="pub"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
       ${r.dateType==="listed"?`Listed on register · captured ${fmtDate(r.date)}`:`Published ${fmtDate(r.date)} · ${esc(r.source)}`}</div>
     <h3>${esc(r.title)}</h3><p>${esc(r.summary)}</p>
+    ${planHtml(r.paymentPlan)}
     <div class="meta"><span><b>${esc(r.developer)}</b></span><span>${esc(r.community)}</span>${r.estSqft?`<a class="sqft" href="${esc(r.specSource||r.url)}" target="_blank" rel="noopener" title="${r.units} units × ${r.sizeMinSqft.toLocaleString()}–${r.sizeMaxSqft.toLocaleString()} sq ft">≈${fmtSq(r.estSqft)} sq ft est. · ${r.units} units</a>`:""}
     ${r.priceFrom?`<span class="price">from ${fmtAED(r.priceFrom)}</span>`:""}
     <a class="src" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.source)} ↗</a></div></div></article>`;
@@ -461,13 +486,14 @@ function newsList(rows){
 let SHARE_ALL=false;
 const fmtSq=n=>n>=1e6?(n/1e6).toFixed(2).replace(/\.?0+$/,"")+"M":n>=1e3?Math.round(n/1e3)+"K":String(n);
 function shareTable(rows){
-  const dv={};rows.forEach(r=>{const o=dv[r.developer]=dv[r.developer]||{n:0,sq:0,c:0,u:0};o.n++;if(r.estSqft){o.sq+=r.estSqft;o.c++;o.u+=r.units||0}});
+  const dv={};rows.forEach(r=>{const o=dv[r.developer]=dv[r.developer]||{n:0,sq:0,c:0,u:0,pl:{}};o.n++;if(r.paymentPlan)o.pl[r.paymentPlan.label]=(o.pl[r.paymentPlan.label]||0)+1;if(r.estSqft){o.sq+=r.estSqft;o.c++;o.u+=r.units||0}});
   const list=Object.entries(dv).sort((a,b)=>b[1].n-a[1].n||b[1].sq-a[1].sq||a[0].localeCompare(b[0]));
   const tot=rows.length||1,covered=rows.filter(r=>r.estSqft).length,max=Math.max(1,...list.map(x=>x[1].n));
   $("#share-n").textContent=rows.length+" projects";
-  $("#share").innerHTML=`<thead><tr><th>Developer</th><th class="num">Proj.</th><th class="bar-col">% share</th><th class="num">Est. sq ft*</th></tr></thead><tbody>`+
+  $("#share").innerHTML=`<thead><tr><th>Developer</th><th class="num">Proj.</th><th class="bar-col">% share</th><th>Typical plan</th><th class="num">Est. sq ft*</th></tr></thead><tbody>`+
     list.slice(0,SHARE_ALL?list.length:12).map(([k,o])=>`<tr data-dev="${esc(k)}"><td>${esc(k)}</td><td class="num">${o.n}</td>
       <td class="bar-col"><span class="mini"><i style="width:${o.n/max*100}%"></i></span><b>${(o.n/tot*100).toFixed(1)}%</b></td>
+      <td class="tp">${(()=>{const e=Object.entries(o.pl).sort((a,b)=>b[1]-a[1]);return e.length?`${esc(e[0][0])}${e.length>1?`<small>+${e.length-1} other</small>`:""}`:'<span class="na">n/a</span>'})()}</td>
       <td class="num">${o.c?`${fmtSq(o.sq)}<small>${o.u.toLocaleString()} units</small><small>${o.c}/${o.n} proj.</small>`:'<span class="na">n/a</span>'}</td></tr>`).join("")+"</tbody>";
   $("#share-more").hidden=list.length<=12;$("#share-more").textContent=SHARE_ALL?"Show top 12":`Show all ${list.length} developers`;
   $("#share-note").innerHTML=`* Estimated sellable area = published units × midpoint of the published unit-size range. Developers rarely publish total built-up area, so this is available for <b>${covered} of ${rows.length}</b> projects shown and is <b>not</b> a market-share figure. % of projects is exact for the projects tracked here, not the whole UAE market.`;
@@ -487,7 +513,7 @@ function devList(rows){
 // Routing — every view + filter combination has its own URL (#/news?emirate=Dubai&unit=Villa)
 function toHash(st){
   const p=new URLSearchParams();
-  if(st.emirate)p.set("emirate",st.emirate);if(st.unit)p.set("unit",st.unit);if(st.stage)p.set("type",st.stage);if(st.dev)p.set("dev",st.dev);
+  if(st.emirate)p.set("emirate",st.emirate);if(st.unit)p.set("unit",st.unit);if(st.stage)p.set("type",st.stage);if(st.pay)p.set("pay",st.pay);if(st.dev)p.set("dev",st.dev);
   if(st.period)p.set("period",st.period);if(st.priced)p.set("priced","1");if((st.q||"").trim())p.set("q",st.q.trim());
   const qs=p.toString();return "#/"+(st.view||"dash")+(qs?"?"+qs:"");
 }
@@ -497,6 +523,7 @@ function fromHash(){
   S.emirate=EMIRATES.includes(p.get("emirate"))?p.get("emirate"):"";
   S.unit=UNITS.concat(VT).includes(p.get("unit"))?p.get("unit"):"";
   S.stage=["launch","existing"].includes(p.get("type"))?p.get("type"):"";
+  S.pay=["post","handover","none"].includes(p.get("pay"))?p.get("pay"):"";
   S.dev=p.get("dev")||"";S.period=[7,30,90].includes(+p.get("period"))?+p.get("period"):0;
   S.priced=p.get("priced")==="1";S.q=p.get("q")||"";$("#q").value=S.q;
 }
@@ -525,6 +552,7 @@ document.addEventListener("click",ev=>{
   if(t.closest("#emi")){S.emirate=t.dataset.v;go();}
   else if(t.closest("#ut")){S.unit=t.dataset.v;go();}
   else if(t.closest("#stg")){S.stage=t.dataset.v;go();}
+  else if(t.closest("#pay")){S.pay=t.dataset.v;go();}
   else if(t.closest("#period")){S.period=+t.dataset.p;go();}
   else if(t.dataset.emi){S.emirate=t.dataset.emi;S.view="news";go(false,true);}
   else if(t.dataset.unit){S.unit=t.dataset.unit;S.priced=false;S.view="news";go(false,true);}
