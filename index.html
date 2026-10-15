@@ -158,6 +158,8 @@ a.kpi:hover::after{color:var(--accent);opacity:1}
 .tag{font:500 11px/1 var(--f-mono);padding:4px 7px;border-radius:5px;background:var(--chip);white-space:nowrap}
 .tag.kind{background:var(--accent);color:var(--accent-ink)}
 .listed .tag.kind{background:var(--brand);color:var(--brand-ink)}
+.tag.stg.launch{background:none;border:1px solid var(--accent);color:var(--accent);font-weight:600}
+.tag.stg.existing{background:none;border:1px solid var(--muted);color:var(--muted)}
 .tag.ut{border:1px solid var(--line);background:none}
 .pnote{font-size:11.5px;color:var(--muted);align-self:center;flex:none}
 .pub{display:flex;align-items:center;gap:5px;font:500 12px/1.2 var(--f-mono);color:var(--accent);margin:0 0 5px}
@@ -236,6 +238,7 @@ a.kpi:hover::after{color:var(--accent);opacity:1}
     </div>
   </div>
   <div class="row" id="emi"><span class="lbl">Emirate</span></div>
+  <div class="row" id="stg"><span class="lbl">Type</span></div>
   <div class="row" id="ut"><span class="lbl">Unit</span></div>
   <div class="ctl">
     <select id="dev" aria-label="Developer"><option value="">All developers</option></select>
@@ -284,7 +287,9 @@ a.kpi:hover::after{color:var(--accent);opacity:1}
 const EMIRATES=["Abu Dhabi","Dubai","Sharjah","Ajman","Umm Al Quwain","Ras Al Khaimah","Fujairah"];
 const UNITS=["Apartment","Villa","Townhouse","Mixed"];
 const UCLS={Apartment:"apt",Villa:"vil",Townhouse:"twn",Mixed:"mix"};
-const S={period:0,emirate:"",unit:"",dev:"",q:"",priced:false,view:"dash"};
+const S={period:0,emirate:"",unit:"",stage:"",dev:"",q:"",priced:false,view:"dash"};
+const STAGES=[["launch","New launches"],["existing","Existing projects"]];
+const stageOf=r=>r.stage==="existing"?"existing":"launch";
 const VT="Villa & Townhouse";
 const unitOk=(r,u)=>u===VT?(r.unitType==="Villa"||r.unitType==="Townhouse"):r.unitType===u;
 let DATA=[],UPDATED="",PH=null;
@@ -312,6 +317,7 @@ function filtered(ignore){
     if(S.emirate&&ignore!=="emirate"&&r.emirate!==S.emirate)return false;
     if(S.unit&&ignore!=="unit"&&!unitOk(r,S.unit))return false;
     if(S.priced&&!r.priceFrom)return false;
+    if(S.stage&&ignore!=="stage"&&stageOf(r)!==S.stage)return false;
     if(S.dev&&ignore!=="dev"&&r.developer!==S.dev)return false;
     if(q&&!(r.project+" "+r.developer+" "+r.community+" "+r.title+" "+r.emirate).toLowerCase().includes(q))return false;
     return true;
@@ -326,14 +332,17 @@ function chips(){
     .map(([v,l,n])=>`<button class="chip" data-v="${esc(v)}" aria-pressed="${S.emirate===v}">${esc(l)}<small>${n}</small></button>`).join("");
   $("#ut").innerHTML='<span class="lbl">Unit</span>'+[["","All",tot2]].concat(UNITS.map(x=>[x,x,u[x]||0]))
     .map(([v,l,n])=>`<button class="chip" data-v="${esc(v)}" aria-pressed="${S.unit===v}">${esc(l)}<small>${n}</small></button>`).join("");
+  const sf=filtered("stage"),sc={launch:0,existing:0};sf.forEach(r=>sc[stageOf(r)]++);
+  $("#stg").innerHTML='<span class="lbl">Type</span>'+[["","All",sf.length]].concat(STAGES.map(([k,l])=>[k,l,sc[k]]))
+    .map(([v,l,n])=>`<button class="chip" data-v="${esc(v)}" aria-pressed="${S.stage===v}">${esc(l)}<small>${n}</small></button>`).join("");
   document.querySelectorAll("#period button").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.p===S.period));
   $("#dev").value=S.dev;
   const parts=[];
-  if(S.period)parts.push("published in last "+S.period+" days (undated register entries hidden)");if(S.emirate)parts.push(S.emirate);if(S.unit)parts.push(S.unit);
+  if(S.period)parts.push("published in last "+S.period+" days (undated register entries hidden)");if(S.stage)parts.push(S.stage==="launch"?"New launches":"Existing projects");if(S.emirate)parts.push(S.emirate);if(S.unit)parts.push(S.unit);
   if(S.unit===VT)parts.splice(parts.indexOf(VT),1,"Villas & townhouses");if(S.priced)parts.push("priced launches only");
   if(S.dev)parts.push(S.dev);if(S.q)parts.push("“"+S.q+"”");
   $("#active").innerHTML=parts.length?`Showing: ${esc(parts.join(" · "))} <button id="clr">Clear all</button>`:"";
-  const c=$("#clr");if(c)c.onclick=()=>{Object.assign(S,{period:0,emirate:"",unit:"",dev:"",q:"",priced:false});$("#q").value="";go();};
+  const c=$("#clr");if(c)c.onclick=()=>{Object.assign(S,{period:0,emirate:"",unit:"",stage:"",dev:"",q:"",priced:false});$("#q").value="";go();};
 }
 
 function photoFor(r){
@@ -352,7 +361,7 @@ function card(r){
     ${p?`<figure class="ph"><img src="${esc(p.src)}" alt="${esc(p.label)}" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('err')">
       <figcaption><span class="area">${p.own?"Project":"Area"}: ${esc(p.label)}</span><a href="${esc(p.page)}" target="_blank" rel="noopener">© ${esc(p.credit)}</a></figcaption></figure>`:""}
     <div class="body">
-    <div class="tags"><span class="tag kind">${r.dateType==="listed"?"LISTED":"NEWS"}</span><span class="tag">${esc(r.emirate)}</span>
+    <div class="tags"><span class="tag kind">${r.dateType==="listed"?"LISTED":"NEWS"}</span><span class="tag stg ${stageOf(r)}">${stageOf(r)==="existing"?"Existing project":"New launch"}</span><span class="tag">${esc(r.emirate)}</span>
     <span class="tag ut">${esc(r.unitType)}${r.unitBasis==="inferred"?' <span class="inf">inferred</span>':""}</span></div>
     <div class="pub"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
       ${r.dateType==="listed"?`Listed on register · captured ${fmtDate(r.date)}`:`Published ${fmtDate(r.date)} · ${esc(r.source)}`}</div>
@@ -369,7 +378,7 @@ function dash(rows){
   const news=rows.filter(r=>r.dateType==="reported").length;
   const base={...S,priced:false,unit:S.unit===VT?"":S.unit};
   $("#kpis").innerHTML=[
-    ["Projects",rows.length,`${news} news · ${rows.length-news} listed`,{...base,view:"news",unit:S.unit},true],
+    ["Projects",rows.length,`${rows.filter(r=>stageOf(r)==="launch").length} new launches · ${rows.filter(r=>stageOf(r)==="existing").length} existing`,{...base,view:"news",unit:S.unit},true],
     ["Apartments",u.Apartment||0,"tower & residence launches",{...base,view:"news",unit:"Apartment"}],
     ["Villas & TH",(u.Villa||0)+(u.Townhouse||0),`${u.Mixed||0} mixed communit${(u.Mixed||0)===1?"y":"ies"}`,{...base,view:"news",unit:VT}],
     ["Developers",devs.size,(n=>`across ${n} emirate${n===1?"":"s"}`)(new Set(rows.map(r=>r.emirate)).size),{...S,view:"devs"}],
@@ -441,7 +450,7 @@ function devList(rows){
 // Routing — every view + filter combination has its own URL (#/news?emirate=Dubai&unit=Villa)
 function toHash(st){
   const p=new URLSearchParams();
-  if(st.emirate)p.set("emirate",st.emirate);if(st.unit)p.set("unit",st.unit);if(st.dev)p.set("dev",st.dev);
+  if(st.emirate)p.set("emirate",st.emirate);if(st.unit)p.set("unit",st.unit);if(st.stage)p.set("type",st.stage);if(st.dev)p.set("dev",st.dev);
   if(st.period)p.set("period",st.period);if(st.priced)p.set("priced","1");if((st.q||"").trim())p.set("q",st.q.trim());
   const qs=p.toString();return "#/"+(st.view||"dash")+(qs?"?"+qs:"");
 }
@@ -450,6 +459,7 @@ function fromHash(){
   S.view=["dash","news","devs"].includes(v)?v:"dash";
   S.emirate=EMIRATES.includes(p.get("emirate"))?p.get("emirate"):"";
   S.unit=UNITS.concat(VT).includes(p.get("unit"))?p.get("unit"):"";
+  S.stage=["launch","existing"].includes(p.get("type"))?p.get("type"):"";
   S.dev=p.get("dev")||"";S.period=[7,30,90].includes(+p.get("period"))?+p.get("period"):0;
   S.priced=p.get("priced")==="1";S.q=p.get("q")||"";$("#q").value=S.q;
 }
@@ -475,6 +485,7 @@ document.addEventListener("click",ev=>{
   const t=ev.target.closest("button");if(!t)return;
   if(t.closest("#emi")){S.emirate=t.dataset.v;go();}
   else if(t.closest("#ut")){S.unit=t.dataset.v;go();}
+  else if(t.closest("#stg")){S.stage=t.dataset.v;go();}
   else if(t.closest("#period")){S.period=+t.dataset.p;go();}
   else if(t.dataset.emi){S.emirate=t.dataset.emi;S.view="news";go(false,true);}
   else if(t.dataset.unit){S.unit=t.dataset.unit;S.priced=false;S.view="news";go(false,true);}
@@ -483,8 +494,14 @@ document.addEventListener("click",ev=>{
 $("#dev").onchange=e=>{S.dev=e.target.value;go()};
 let qt;$("#q").oninput=e=>{clearTimeout(qt);qt=setTimeout(()=>{S.q=e.target.value;go(true)},250)};
 
-Promise.all([fetch("data/news.json?v="+Date.now()).then(r=>r.json()),fetch("data/photos.json?v="+Date.now()).then(r=>r.json()).catch(()=>null)]).then(([j,ph])=>{PH=ph;
-  DATA=j.items;UPDATED=j.updated;$("#upd").textContent=fmtDate(UPDATED).toUpperCase();
+const V="?v="+Date.now(),get=u=>fetch(u+V).then(r=>{if(!r.ok)throw new Error(u);return r.json()});
+// Base archive + small daily files listed in data/manifest.json (the daily task writes one file per day)
+Promise.all([get("data/news.json"),get("data/photos.json").catch(()=>null),get("data/manifest.json").catch(()=>({files:[]}))]).then(async([j,ph,m])=>{PH=ph;
+  const daily=await Promise.all((m.files||[]).map(f=>get("data/"+f).catch(()=>({items:[]}))));
+  const seen=new Set(),all=[];
+  [j.items,...daily.map(d=>d.items||[])].flat().forEach(r=>{const k=(r.developer+"|"+r.project).toLowerCase();if(seen.has(k))return;seen.add(k);all.push(r)});
+  all.forEach((r,i)=>r.id=i+1); // unique ids after merging
+  DATA=all;UPDATED=[j.updated,m.updated].filter(Boolean).sort().pop();$("#upd").textContent=fmtDate(UPDATED).toUpperCase();
   [...new Set(DATA.map(r=>r.developer))].sort().forEach(d=>{const o=document.createElement("option");o.value=o.textContent=d;$("#dev").append(o)});
   fromHash();if(S.dev&&!DATA.some(r=>r.developer===S.dev))S.dev="";
   render();

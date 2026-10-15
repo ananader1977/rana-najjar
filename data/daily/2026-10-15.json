@@ -14,7 +14,8 @@
    "title": "Aldar plans a large Dubai villa and townhouse launch before year-end",
    "summary": "Aldar's fourth Dubai project, in partnership with Dubai Holding, will offer villas and townhouses and is due to launch by end-2026; name, size and prices not yet disclosed.",
    "source": "The National",
-   "url": "https://www.thenationalnews.com/business/property/2026/10/14/aldar-to-launch-major-dubai-villa-and-townhouse-project-by-end-of-year/"
+   "url": "https://www.thenationalnews.com/business/property/2026/10/14/aldar-to-launch-major-dubai-villa-and-townhouse-project-by-end-of-year/",
+   "stage": "launch"
   },
   {
    "id": 46,
@@ -30,7 +31,8 @@
    "title": "Al Tay Hills opens show villas for its 1,100-home Sharjah community",
    "summary": "Dh3.5bn community of about 1,100 townhouses, twin and standalone villas and mansions (mostly 3–6 BR); show villas are now complete for buyers to view.",
    "source": "Gulf News",
-   "url": "https://gulfnews.com/amp/story/uae/sharjah/sharjah-housing-gets-1100-new-family-homes-1.500697787"
+   "url": "https://gulfnews.com/amp/story/uae/sharjah/sharjah-housing-gets-1100-new-family-homes-1.500697787",
+   "stage": "existing"
   },
   {
    "id": 47,
@@ -46,7 +48,8 @@
    "title": "New developer ORAYA announces its first project on Marjan Beach",
    "summary": "A fully furnished, hospitality-branded residential project in Ras Al Khaimah; unit mix, prices and handover to be announced in the coming weeks.",
    "source": "GlobeNewswire",
-   "url": "https://www.globenewswire.com/news-release/2026/10/01/3373464/0/en/oraya-developer-announces-first-uae-project-on-marjan-beach.html"
+   "url": "https://www.globenewswire.com/news-release/2026/10/01/3373464/0/en/oraya-developer-announces-first-uae-project-on-marjan-beach.html",
+   "stage": "launch"
   },
   {
    "id": 89,
@@ -62,7 +65,8 @@
    "title": "SAAS Properties brings Ritz-Carlton branded homes to Al Maryah Island",
    "summary": "The branded tower will hold 165 homes, from one- to four-bedroom simplex and duplex units up to a top-floor penthouse; construction is under way, with handover targeted for Q2 2030.",
    "source": "Khaleej Times",
-   "url": "https://www.khaleejtimes.com/business/property/saas-properties-launches-the-ritz-carlton-residences-al-maryah-island-at-livex-2026"
+   "url": "https://www.khaleejtimes.com/business/property/saas-properties-launches-the-ritz-carlton-residences-al-maryah-island-at-livex-2026",
+   "stage": "launch"
   },
   {
    "id": 90,
@@ -78,7 +82,8 @@
    "title": "Aldar adds second phase of Al Ghadeer Gardens",
    "summary": "The follow-on phase offers two- and three-bedroom townhouses plus four-bedroom villas, with completion slated for Q4 2029.",
    "source": "ezre.ae launch register",
-   "url": "https://ezre.ae/new-launches"
+   "url": "https://ezre.ae/new-launches",
+   "stage": "launch"
   },
   {
    "id": 91,
@@ -94,7 +99,8 @@
    "title": "Dubai South lists Hayat 7 townhouses",
    "summary": "New phase of the Hayat community in Dubai South with four-bedroom townhouses; payment plan of 10% down, 55% during construction, 25% on handover and 10% post-handover, with handover expected Q1 2029.",
    "source": "ezre.ae launch register",
-   "url": "https://ezre.ae/new-launches"
+   "url": "https://ezre.ae/new-launches",
+   "stage": "launch"
   }
  ]
 }
