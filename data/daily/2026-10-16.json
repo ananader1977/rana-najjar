@@ -1,0 +1,72 @@
+{
+ "items": [
+  {
+   "id": 92,
+   "date": "2026-10-15",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Samana",
+   "project": "Samana COLLECTA – The World Islands",
+   "emirate": "Dubai",
+   "community": "The World Islands",
+   "unitType": "Mixed",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "Samana debuts premium COLLECTA brand with World Islands flagship",
+   "summary": "Samana's new premium brand COLLECTA opens with a flagship at The World Islands of 840 branded residences (studios to four bedrooms) plus seven floating villas and two tree villas; prices are expected to start under AED 2 million and GDV exceeds AED 4 billion.",
+   "source": "Observer Dubai",
+   "url": "https://observerdubai.com/samana-launches-collecta-taking-its-next-growth-chapter-into-premium-real-estate/"
+  },
+  {
+   "id": 93,
+   "date": "2026-10-15",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "Aldar",
+   "project": "Aljada residential blocks (forward purchase from Arada)",
+   "emirate": "Sharjah",
+   "community": "Aljada",
+   "unitType": "Apartment",
+   "unitBasis": "inferred",
+   "priceFrom": null,
+   "title": "Aldar makes Sharjah debut with Dh1.1bn Aljada forward purchase",
+   "summary": "Aldar is buying more than 1,100 homes across nine buildings in three residential blocks at Arada's Aljada under a Dh1.1bn forward-purchase deal for its develop-to-hold portfolio, with handover expected in Q4 2029.",
+   "source": "The National",
+   "url": "https://www.thenationalnews.com/business/property/2026/10/15/aldar-enters-sharjah-with-dh11bn-residential-acquisition/"
+  },
+  {
+   "id": 94,
+   "date": "2026-10-14",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "ELEVATE",
+   "project": "Mondrian Al Marjan Island Beach Residences",
+   "emirate": "Ras Al Khaimah",
+   "community": "Al Marjan Island",
+   "unitType": "Mixed",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "AED 73m four-home deal at Mondrian Al Marjan Island; project 75% sold",
+   "summary": "A North American buyer acquired two penthouses, a townhouse and a residence for AED 73 million; the developer says the project is 75% sold with piling 80% complete and has released new beachfront two-bedroom units.",
+   "source": "Observer Dubai",
+   "url": "https://observerdubai.com/north-american-buyer-seals-mega-aed-73-million-deal-at-mondrian-al-marjan-island-the-largest-single-deal-on-al-marjan-island-of-2026/"
+  },
+  {
+   "id": 95,
+   "date": "2026-10-13",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "ALAIN",
+   "project": "Rove Home Meydan Horizon",
+   "emirate": "Dubai",
+   "community": "Mohammed Bin Rashid City",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "ALAIN and Rove break ground on Rove Home Meydan Horizon",
+   "summary": "Construction has started on the 19-storey tower in MBR City with 190 furnished one- and two-bedroom apartments; handover is targeted for Q1 2029.",
+   "source": "GCC Business News",
+   "url": "https://www.gccbusinessnews.com/alain-rove-hotels-break-ground-dubai/"
+  }
+ ]
+}
