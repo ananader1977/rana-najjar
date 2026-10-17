@@ -1,0 +1,72 @@
+{
+ "items": [
+  {
+   "id": 96,
+   "date": "2026-10-08",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Cityview Developments",
+   "project": "Mövenpick Residences Dubai Motor City",
+   "emirate": "Dubai",
+   "community": "Dubai Motor City",
+   "unitType": "Apartment",
+   "unitBasis": "inferred",
+   "priceFrom": null,
+   "title": "Cityview and Accor plan Mövenpick-branded homes in Motor City",
+   "summary": "Cityview Developments signed with Accor to deliver 408 Mövenpick-branded residences in Dubai Motor City, slated for completion in 2028.",
+   "source": "Zawya (via TradingView)",
+   "url": "https://www.tradingview.com/news/reuters.com,2026-10-08:newsml_Zaw6NSG6w:0-zawya-accor-to-launch-two-new-branded-residential-developments-in-dubai/"
+  },
+  {
+   "id": 97,
+   "date": "2026-10-08",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Cityview Developments",
+   "project": "Pullman Residences & Offices Dubai Meydan",
+   "emirate": "Dubai",
+   "community": "Meydan",
+   "unitType": "Mixed",
+   "unitBasis": "inferred",
+   "priceFrom": null,
+   "title": "Pullman-branded residences and offices planned for Meydan",
+   "summary": "Second Cityview–Accor project combines 282 Pullman-branded residences with branded offices in Meydan; opening targeted for 2029.",
+   "source": "Zawya (via TradingView)",
+   "url": "https://www.tradingview.com/news/reuters.com,2026-10-08:newsml_Zaw6NSG6w:0-zawya-accor-to-launch-two-new-branded-residential-developments-in-dubai/"
+  },
+  {
+   "id": 98,
+   "date": "2026-10-08",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "DHG Properties",
+   "project": "Helvetia Residences",
+   "emirate": "Dubai",
+   "community": "Jumeirah Village Circle",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "DHG Properties begins handover of Helvetia Residences in JVC",
+   "summary": "The Swiss-backed developer completed its first Dubai project and started handing over the fully sold 430 studio to three-bedroom apartments.",
+   "source": "Gulf News",
+   "url": "https://gulfnews.com/business/property/dhg-properties-completes-first-dubai-project-starts-handover-of-200m-helvetia-residences-1.500703150"
+  },
+  {
+   "id": 99,
+   "date": "2026-10-15",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "Alef Group",
+   "project": "Linar",
+   "emirate": "Sharjah",
+   "community": "Al Mamzar",
+   "unitType": "Mixed",
+   "unitBasis": "inferred",
+   "priceFrom": null,
+   "title": "Alef says Linar waterfront homes fully sold; new project due 20 October",
+   "summary": "At SIF 2026 Alef reported a complete residential sell-out of its AED 4bn Linar waterfront development and previewed a new project set to launch publicly on 20 October.",
+   "source": "Sharjah24",
+   "url": "https://sharjah24.ae/en/Articles/2026/10/15/Alef-Group-unveils-Sharjah-property-opportunities-at-SIF-2026"
+  }
+ ]
+}
