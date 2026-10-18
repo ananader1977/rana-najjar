@@ -1,0 +1,72 @@
+{
+ "items": [
+  {
+   "id": 100,
+   "date": "2026-06-18",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Ellington",
+   "project": "Everly Place",
+   "emirate": "Dubai",
+   "community": "Meydan Horizon, Mohammed Bin Rashid City",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "Ellington launches Everly Place in Meydan Horizon",
+   "summary": "Ellington Properties has launched Everly Place, a design-led building of 209 homes in Meydan Horizon, offering one- to three-bedroom apartments plus study units.",
+   "source": "Zawya",
+   "url": "https://www.zawya.com/en/economy/gcc/ellington-announces-launch-of-209-design-led-residences-in-meydan-333115"
+  },
+  {
+   "id": 101,
+   "date": "2026-06-24",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Nakheel",
+   "project": "Palm Central Private Residences – next phase",
+   "emirate": "Dubai",
+   "community": "Palm Jebel Ali",
+   "unitType": "Mixed",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "Nakheel releases new phase of Palm Central Private Residences",
+   "summary": "Nakheel has put a further 222 homes on sale at Palm Central Private Residences on Palm Jebel Ali, spread over three low- to mid-rise buildings with one- to four-bedroom apartments and four- and five-bedroom townhouses.",
+   "source": "Nakheel",
+   "url": "https://www.nakheel.com/en/media-centre/press-releases/news-detail/2026/06/24/nakheel-releases-next-phase-of-palm-central-private-residences-amid-accelerating-demand-for-beachfront-living-on-palm-jebel-ali"
+  },
+  {
+   "id": 102,
+   "date": "2026-07-16",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Damac",
+   "project": "Chelsea Residences – Tower C",
+   "emirate": "Dubai",
+   "community": "Dubai Maritime City",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": 2560000,
+   "title": "Damac releases final tower of Chelsea Residences",
+   "summary": "Damac has opened sales of Tower C, the sixth and last tower of its Chelsea FC-branded waterfront scheme, offering one- to three-bedroom homes from about 827 sq ft and AED 2.56 million.",
+   "source": "TradeArabia",
+   "url": "https://www.tradearabia.com/News/465241/Damac-launches-final-tower-of-Chelsea-Residences-in-Dubai"
+  },
+  {
+   "id": 103,
+   "date": "2026-09-16",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Azha Properties",
+   "project": "Azha Park Residences",
+   "emirate": "Ajman",
+   "community": "Ajman East",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "Azha Properties launches 800-home Azha Park Residences in Ajman",
+   "summary": "Azha Properties has launched Azha Park Residences in Ajman East: four buildings with 800 homes (196 studios, 404 one-bed and 200 two-bed units) plus 29 shops.",
+   "source": "Business Today Middle East",
+   "url": "https://businesstoday.me/real-estate/azha-properties-launches-800-unit-ajman-east/"
+  }
+ ]
+}
