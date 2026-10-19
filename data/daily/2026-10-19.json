@@ -1,0 +1,47 @@
+{
+ "items": [
+  {
+   "id": 104,
+   "date": "2026-03-24",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Arada",
+   "project": "The Gate 6",
+   "emirate": "Sharjah",
+   "community": "Aljada",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": 970000,
+   "title": "Arada launches The Gate 6 at Aljada",
+   "summary": "Arada released The Gate 6, a 220-apartment building in Aljada with one- to four-bedroom homes from AED 970,000, on a 5% down, 30% over two years, 65% on completion plan.",
+   "source": "Arada",
+   "url": "https://www.arada.com/en/latest-news/arada-launches-the-gate-6-a-new-premium-residential-hub-at-sharjah-megaproject-aljada/",
+   "paymentPlan": {
+    "label": "35/65",
+    "booking": 5,
+    "pre": 35,
+    "handover": 65,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://www.arada.com/en/latest-news/arada-launches-the-gate-6-a-new-premium-residential-hub-at-sharjah-megaproject-aljada/"
+   }
+  },
+  {
+   "id": 105,
+   "date": "2026-08-03",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "Portville",
+   "project": "Ville 11",
+   "emirate": "Abu Dhabi",
+   "community": "Masdar City",
+   "unitType": "Mixed",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "Portville hands over Ville 11 in Masdar City 14 months early",
+   "summary": "Portville began handing over its 111-unit Ville 11 project at the entrance of Masdar City about 14 months ahead of schedule; units include apartments plus duplex and triplex homes.",
+   "source": "Zawya",
+   "url": "https://www.zawya.com/en/press-release/companies-news/14-months-ahead-of-schedule-portville-begins-handover-of-ville-11-in-abu-dhabis-masdar-city-418822"
+  }
+ ]
+}
