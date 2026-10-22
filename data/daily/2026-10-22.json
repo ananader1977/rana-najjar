@@ -1,0 +1,38 @@
+{
+ "items": [
+  {
+   "id": 125,
+   "date": "2026-10-21",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Zoya Developments",
+   "project": "Elvora",
+   "emirate": "Dubai",
+   "community": "Dubai Land Residence Complex",
+   "unitType": "Apartment",
+   "unitBasis": "inferred",
+   "priceFrom": null,
+   "title": "Zoya adds Elvora in Dubai Land Residence Complex",
+   "summary": "Zoya Developments has launched Elvora in DLRC, its latest addition to a portfolio of more than 10 Dubai projects launched in two years. Pricing, unit mix and handover were not disclosed.",
+   "source": "Gulf News",
+   "url": "https://gulfnews.com/business/property/10-projects-launched-in-just-two-years-zoya-developments-adds-elvora-to-its-growing-dubai-portfolio-1.500718601"
+  },
+  {
+   "id": 126,
+   "date": "2026-10-21",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "Zoya Developments",
+   "project": "Elinor by Zoya",
+   "emirate": "Dubai",
+   "community": "Dubai South",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "Zoya's Elinor sells out and breaks ground in Dubai South",
+   "summary": "The Dh104 million Elinor project of furnished studios and two-bedroom apartments sold out within two weeks of launch and broke ground less than two months later. Handover is targeted for Q3 2028.",
+   "source": "Gulf News",
+   "url": "https://gulfnews.com/business/property/sold-out-in-two-weeks-breaking-ground-in-two-months-zoya-advances-elinor-in-dubai-south-1.500718052"
+  }
+ ]
+}
