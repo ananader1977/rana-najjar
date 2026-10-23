@@ -1,0 +1,38 @@
+{
+ "items": [
+  {
+   "id": 127,
+   "date": "2026-10-06",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "Almal Real Estate Development",
+   "project": "The Unexpected Al Marjan Island Hotel & Residences",
+   "emirate": "Ras Al Khaimah",
+   "community": "Al Marjan Island",
+   "unitType": "Apartment",
+   "unitBasis": "inferred",
+   "priceFrom": null,
+   "title": "Almal tops out The Unexpected Al Marjan Island as works pass 50%",
+   "summary": "Superstructure and concrete works are complete on the 422-unit hotel and residences project operated by Palladium Hotel Group, with overall progress above 50%. Work now moves to facade, MEP and interior fit-out.",
+   "source": "Construction Business News ME",
+   "url": "https://www.cbnme.com/news/almal-completes-superstructure-of-the-unexpected-al-marjan-island-hotel-residences/"
+  },
+  {
+   "id": 128,
+   "date": "2026-10-06",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "ALA Developments",
+   "project": "Havencia",
+   "emirate": "Dubai",
+   "community": "Dubai Land Residence Complex",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "ALA Developments breaks ground on Havencia in DLRC",
+   "summary": "Construction has started on the 286-unit Havencia, offering studios, one- and two-bedroom apartments. Handover is targeted for Q2 2028.",
+   "source": "Gulf News",
+   "url": "https://gulfnews.com/gn-focus/company-news/ala-developments-breaks-ground-on-286-unit-havencia-project-in-dubai-1.500700023"
+  }
+ ]
+}
