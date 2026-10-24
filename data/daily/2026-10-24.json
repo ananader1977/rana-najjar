@@ -1,0 +1,38 @@
+{
+ "items": [
+  {
+   "id": 129,
+   "date": "2026-10-22",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Arsenal East",
+   "project": "VIBE by Arsenal East",
+   "emirate": "Dubai",
+   "community": "Jumeirah Garden City",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "Arsenal East unveils VIBE in Jumeirah Garden City",
+   "summary": "VIBE offers 207 fully furnished homes in Satwa's Jumeirah Garden City: 153 one-bedroom apartments and 54 studios. Pricing, payment plan and handover were not disclosed.",
+   "source": "Gulf News",
+   "url": "https://gulfnews.com/business/property/vibe-by-arsenal-east-brings-a-fresh-take-on-urban-living-to-dubai-1.500716811"
+  },
+  {
+   "id": 130,
+   "date": "2026-10-13",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "Tabeer Developments",
+   "project": "48 Parkside",
+   "emirate": "Dubai",
+   "community": "Arjan",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "Tabeer hands over Dh250m 48 Parkside in Arjan",
+   "summary": "Tabeer Developments has completed and handed over its Dh250 million 48 Parkside project of one- to three-bedroom residences in Arjan, roughly 24 months after starting, with residents now moving in.",
+   "source": "Gulf News",
+   "url": "https://gulfnews.com/business/property/tabeer-hands-over-dh250-million-48-parkside-in-24-months-eyes-major-expansion-1.500707506"
+  }
+ ]
+}
