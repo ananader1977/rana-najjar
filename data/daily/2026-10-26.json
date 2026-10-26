@@ -1,0 +1,38 @@
+{
+ "items": [
+  {
+   "id": 134,
+   "date": "2026-10-20",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Meraki Developers",
+   "project": "Celeste",
+   "emirate": "Dubai",
+   "community": "Dubai South",
+   "unitType": "Apartment",
+   "unitBasis": "inferred",
+   "priceFrom": null,
+   "title": "Meraki Developers lines up Celeste as its Dubai South debut",
+   "summary": "Meraki plans to officially unveil Celeste in November 2026 as part of a seven-project Dubai South pipeline; unit mix, prices and handover are still to be announced.",
+   "source": "Gulf News",
+   "url": "https://gulfnews.com/gn-focus/company-news/meraki-developers-expands-to-dubai-south-with-7-projects-in-the-pipeline-1.500717275"
+  },
+  {
+   "id": 135,
+   "date": "2026-09-14",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "Dubai Holding",
+   "project": "Jumeirah Residences Emirates Towers",
+   "emirate": "Dubai",
+   "community": "Emirates Towers",
+   "unitType": "Apartment",
+   "unitBasis": "inferred",
+   "priceFrom": null,
+   "title": "Dubai Holding hires CSCEC ME to build Jumeirah Residences Emirates Towers",
+   "summary": "An AED 5bn contract covers Dubai Holding's new headquarters plus two towers with 754 Jumeirah-branded residences; handover of the residences is scheduled for 2030.",
+   "source": "Middle East Construction News",
+   "url": "https://meconstructionnews.com/69064/dubai-holding-awards-us-1-36bn-contract-to-cscec-me"
+  }
+ ]
+}
