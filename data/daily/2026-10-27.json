@@ -1,0 +1,30 @@
+{
+ "items": [
+  {
+   "id": 136,
+   "date": "2026-10-24",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Sugee Group",
+   "project": "Vienna House Residences by Wyndham",
+   "emirate": "Ras Al Khaimah",
+   "community": "Al Marjan Island",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "Sugee Group and Wyndham team up on first Vienna House branded residences in RAK",
+   "summary": "Sugee Group is partnering with Wyndham on fully furnished, hotel-managed studios, 1- and 2-bedroom apartments and penthouses on Al Marjan Island, with short-term rentals permitted; handover is listed for Q4 2027 and bookings are not yet open.",
+   "source": "TradeArabia",
+   "url": "https://tradearabia.com/News/488404/Sugee-Wyndham-to-build-world-s-first-Vienna-House-residences-in-RAK",
+   "paymentPlan": {
+    "label": "30/70",
+    "booking": 10,
+    "pre": 30,
+    "handover": 70,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/vienna-house-residences-by-wyndham"
+   }
+  }
+ ]
+}
