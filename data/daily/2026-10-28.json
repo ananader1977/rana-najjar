@@ -1,0 +1,60 @@
+{
+ "items": [
+  {
+   "id": 137,
+   "date": "2026-10-27",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Atara Development",
+   "project": "Velora Residence",
+   "emirate": "Dubai",
+   "community": "Dubai Islands",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "Atara launches furnished boutique building on Dubai Islands",
+   "summary": "Atara Development has launched Velora Residence on Island A, a 58-home building of fully furnished one- and two-bedroom apartments sized roughly 857 to 1,857 sq ft.",
+   "source": "Middle East Construction News",
+   "url": "https://meconstructionnews.com/69591/atara-launches-velora-residence-on-dubai-islands",
+   "units": 58,
+   "sizeMinSqft": 857,
+   "sizeMaxSqft": 1857,
+   "specSource": "https://meconstructionnews.com/69591/atara-launches-velora-residence-on-dubai-islands",
+   "estSqft": 79000
+  },
+  {
+   "id": 138,
+   "date": "2026-10-27",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Zimaya Properties",
+   "project": "Lawncrest",
+   "emirate": "Dubai",
+   "community": "Dubai Production City",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": 595000,
+   "title": "Zimaya unveils Dh185m Lawncrest in Dubai Production City",
+   "summary": "Zimaya's fifth project is a ten-storey building with 183 studios, one- and two-bedroom apartments, with studios priced from AED 595,000.",
+   "source": "EIN Presswire",
+   "url": "https://www.einpresswire.com/article/952547317/zimaya-properties-launches-fifth-project-the-dh185-million-lawncrest-in-dubai"
+  },
+  {
+   "id": 139,
+   "date": "2026-10-22",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "National Properties",
+   "project": "399 Hills Park",
+   "emirate": "Dubai",
+   "community": "Dubai Hills Estate",
+   "unitType": "Apartment",
+   "unitBasis": "inferred",
+   "priceFrom": null,
+   "title": "National Properties completes 399 Hills Park and starts handover",
+   "summary": "The two-tower, 399-unit development is complete; the tower offered for sale is fully sold and owners are receiving keys, while the second tower is being held as a rental asset.",
+   "source": "Middle East Construction News",
+   "url": "https://meconstructionnews.com/69565/national-properties-begins-handover-of-399-hills-park"
+  }
+ ]
+}
