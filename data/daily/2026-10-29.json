@@ -1,0 +1,38 @@
+{
+ "items": [
+  {
+   "id": 140,
+   "date": "2026-10-26",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "Casa Vista Development",
+   "project": "AQUORA",
+   "emirate": "Dubai",
+   "community": "Dubai Islands",
+   "unitType": "Apartment",
+   "unitBasis": "inferred",
+   "priceFrom": null,
+   "title": "Casa Vista's AQUORA on Dubai Islands 40% sold before official unveiling",
+   "summary": "The Dh350m waterfront scheme of 105 residences and six retail units had sold 40% of its homes ahead of its Madinat Jumeirah unveiling on 28 October; handover is targeted for Q1 2028.",
+   "source": "Khaleej Times",
+   "url": "https://www.khaleejtimes.com/business/property/casa-vista-development-strengthens-uae-presence-as-40-per-cent-of-aquora-residences-sell-ahead-of-unveiling"
+  },
+  {
+   "id": 141,
+   "date": "2026-10-26",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "Nakheel",
+   "project": "Bay Grove Residences – Phases 2 & 4",
+   "emirate": "Dubai",
+   "community": "Dubai Islands",
+   "unitType": "Apartment",
+   "unitBasis": "inferred",
+   "priceFrom": null,
+   "title": "Nakheel awards Dh950m+ build contract for 617 Bay Grove homes",
+   "summary": "Parkway International will build eight buildings with 617 one- to four-bedroom homes across Phases 2 (360 units) and 4 (257 units); completion is expected in late 2028 and Q2 2029 respectively.",
+   "source": "TradeArabia",
+   "url": "https://tradearabia.com/News/488480/Nakheel-awards-%24259m-contract-for-Bay-Grove-Residences"
+  }
+ ]
+}
