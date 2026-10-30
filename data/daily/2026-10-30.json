@@ -1,0 +1,30 @@
+{
+ "items": [
+  {
+   "id": 142,
+   "date": "2026-10-30",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Aman Group",
+   "project": "Janu Residences Al Marjan Island",
+   "emirate": "Ras Al Khaimah",
+   "community": "Al Marjan Island",
+   "unitType": "Mixed",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "Aman Group unveils Janu Residences on Al Marjan Island",
+   "summary": "Branded collection of about 73 apartments and penthouses plus five marina villas (1–5 bedrooms) alongside the Janu resort; completion targeted for Q2 2029, prices on request.",
+   "source": "Business Today",
+   "url": "https://www.businesstoday.com.my/2026/10/30/unveiling-janu-residences-al-marjan-island-by-aman-group-a-new-coastal-expression-of-janu-living/",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": null,
+    "pre": 50,
+    "handover": 50,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://metropolitan.realestate/al-marjan-island/janu-residences-al-marjan-island-rak/"
+   }
+  }
+ ]
+}
