@@ -1,0 +1,81 @@
+{
+ "items": [
+  {
+   "id": 168,
+   "date": "2026-11-03",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "QUBE Development",
+   "project": "Sawa Residences",
+   "emirate": "Dubai",
+   "community": "Meydan Horizon, MBR City",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "QUBE launches 355-home Sawa Residences on Meydan Horizon lagoon",
+   "summary": "A lower-density development of 355 one- to three-bedroom apartments fronting the 2 km lagoon and 4 km promenade in MBR City, part of QUBE's AED 7.5 billion pipeline. The release gives no price or handover date; listing sites vary, so confirm both with the developer.",
+   "source": "Mid-East.info",
+   "url": "https://mid-east.info/qube-development-unveils-sawa-residences-a-prime-waterfront-address-in-mohammed-bin-rashid-city/"
+  },
+  {
+   "id": 169,
+   "date": "2026-11-03",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "MERED",
+   "project": "Riviera Residences Phase 2",
+   "emirate": "Abu Dhabi",
+   "community": "Al Reem Island",
+   "unitType": "Mixed",
+   "unitBasis": "stated",
+   "priceFrom": 2200000,
+   "title": "MERED releases second phase of Riviera Residences on Al Reem",
+   "summary": "The Herzog & de Meuron-designed phase has 389 apartments, eight Bay Villas, six Sky Villas and a penthouse, with work due to start by year-end and completion targeted for Q2 2030. Listing sites quote from AED 2.2M; one tracker still shows pricing on request.",
+   "source": "Zawya",
+   "url": "https://www.zawya.com/en/press-release/companies-news/mered-launches-phase-2-of-riviera-residences-on-al-reem-island-1890448",
+   "paymentPlan": {
+    "label": "50/50",
+    "booking": 5,
+    "pre": 50,
+    "handover": 50,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://mered.ae/projects/riviera"
+   }
+  },
+  {
+   "id": 170,
+   "date": "2026-11-03",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "ELEVATE",
+   "project": "Mondrian Al Marjan Island Beach Residences – Mondrian Beach Villa",
+   "emirate": "Ras Al Khaimah",
+   "community": "Al Marjan Island",
+   "unitType": "Villa",
+   "unitBasis": "stated",
+   "priceFrom": 50000000,
+   "title": "ELEVATE lists final Edit Collection home, an AED 50M beach villa",
+   "summary": "The five-bedroom duplex of over 8,470 sq ft has a private pool and direct beach access, offered on a 35/65 plan. ELEVATE also says shoring and piling are complete and construction is ahead of schedule at the AED 1.4 billion project.",
+   "source": "Zawya",
+   "url": "https://www.zawya.com/en/press-release/companies-news/elevate-unveils-aed-50mln-mondrian-beach-villa-final-residence-in-the-edit-collection-1886258"
+  },
+  {
+   "id": 171,
+   "date": "2026-11-02",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "Omniyat",
+   "project": "VELA, Dorchester Collection",
+   "emirate": "Dubai",
+   "community": "Marasi Bay, Business Bay",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "Omniyat opens first show residence at VELA in Marasi Bay",
+   "summary": "The completed four-bedroom Marina Residence, with a private pool and terraces, gives buyers a first look inside the 38-residence Foster + Partners tower. Interiors are by Gilles & Boissier and Dorchester Collection will manage the residences.",
+   "source": "Omniyat",
+   "url": "https://omniyat.com/news/vela-show-residence-unveiled-at-marasi-bay"
+  }
+ ]
+}
