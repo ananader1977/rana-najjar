@@ -1,0 +1,55 @@
+{
+ "items": [
+  {
+   "id": 186,
+   "date": "2026-11-11",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Cheval Collection",
+   "project": "Cheval South Bay",
+   "emirate": "Dubai",
+   "community": "Dubai South",
+   "unitType": "Mixed",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "Cheval Collection launches Cheval South Bay in Dubai South",
+   "summary": "A 193-unit mixed scheme: 98 serviced hotel apartments (studio to 3-bedroom) and 95 branded residences (1 to 3 bedrooms), scheduled to open in 2030. Prices are not yet disclosed; sales are expected to start next year.",
+   "source": "The National",
+   "url": "https://www.thenationalnews.com/business/property/2026/11/11/uks-cheval-collection-launches-new-dubai-project-in-expansion-push/"
+  },
+  {
+   "id": 187,
+   "date": "2026-11-10",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "Damac",
+   "project": "Al Zorah Creek Waterfront (Phase 1)",
+   "emirate": "Ajman",
+   "community": "Al Zorah",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "DAMAC signs Dh3bn land deal for Al Zorah creek waterfront",
+   "summary": "DAMAC signed a land agreement for a Dh3bn creek-side programme in Al Zorah. Phase 1 is two towers with 421 homes (studios to 3-bedroom apartments and loft residences), with launch expected in Q1 2027.",
+   "source": "TravelsDubai",
+   "url": "https://www.travelsdubai.com/10-Nov-2026/ajman-gets-dh3bn-damac-waterfront-project"
+  },
+  {
+   "id": 188,
+   "date": "2026-11-10",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "Nakheel",
+   "project": "Bay Estate",
+   "emirate": "Dubai",
+   "community": "Dubai Islands",
+   "unitType": "Mixed",
+   "unitBasis": "stated",
+   "priceFrom": 5800000,
+   "title": "Bay Estate reportedly sold 350+ units in seven hours",
+   "summary": "Reported sales of more than 350 villas, townhouses and land plots within seven hours of release, at starting prices of about AED 5.8 million. The figure is not yet confirmed by final transaction records.",
+   "source": "Dubai Chronicle",
+   "url": "https://www.dubaichronicle.com/2026/11/10/dubai-new-property-launches-nakheel-beyond-projects/"
+  }
+ ]
+}
