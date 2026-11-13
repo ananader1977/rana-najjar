@@ -1,0 +1,47 @@
+{
+ "items": [
+  {
+   "id": 189,
+   "date": "2026-11-12",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Palma",
+   "project": "Serenia District Phase 2 (East Residence 2 & 3)",
+   "emirate": "Dubai",
+   "community": "Jumeirah Islands",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "Palma launches second phase of Serenia District in Jumeirah Islands",
+   "summary": "Phase 2 adds two apartment towers, East Residence 2 (25 floors, 2 to 4 bedrooms, 1,316 to 5,364 sq ft) and East Residence 3 (23 floors, 1 to 2 bedrooms, 875 to 1,605 sq ft). Phase 1 (West Residence) is under main structural construction.",
+   "source": "Gulf News",
+   "url": "https://gulfnews.com/business/property/palma-development-unveils-the-second-phase-of-serenia-district-in-jumeirah-islands-1.500744873"
+  },
+  {
+   "id": 190,
+   "date": "2026-11-12",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "Danube",
+   "project": "Shahrukhz Residences",
+   "emirate": "Dubai",
+   "community": "Dubai Maritime City",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": 1650000,
+   "title": "Shahrukhz Residences penthouses sell out on launch day",
+   "summary": "All penthouses, designed by Gauri Khan and priced at AED 19.6 million each, sold out on the launch day (11 Nov 2026). The developer reported 500 expressions of interest before launch.",
+   "source": "Khaleej Times",
+   "url": "https://www.khaleejtimes.com/business/gauri-khan-designed-dh196-million-penthouses-in-shah-rukh-khans-project-sold-out",
+   "paymentPlan": {
+    "label": "30/70",
+    "booking": null,
+    "pre": 30,
+    "handover": 70,
+    "post": 0,
+    "postMonths": null,
+    "source": "https://www.khaleejtimes.com/business/gauri-khan-designed-dh196-million-penthouses-in-shah-rukh-khans-project-sold-out"
+   }
+  }
+ ]
+}
