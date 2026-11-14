@@ -1,0 +1,81 @@
+{
+ "items": [
+  {
+   "id": 191,
+   "date": "2026-11-14",
+   "dateType": "listed",
+   "stage": "launch",
+   "developer": "Ermax Development",
+   "project": "Lusin Residences",
+   "emirate": "Dubai",
+   "community": "Dubai International City",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": 636400,
+   "title": "Ermax lists Lusin Residences in Dubai International City",
+   "summary": "Off-plan studios to 2-bedroom apartments and penthouses (467–2,634 sq ft), handover Q4 2027, on sale with three published payment plans.",
+   "source": "EZRE project page",
+   "url": "https://ezre.ae/projects/lusin-residences"
+  },
+  {
+   "id": 192,
+   "date": "2026-11-14",
+   "dateType": "listed",
+   "stage": "launch",
+   "developer": "New World",
+   "project": "Marwa Views",
+   "emirate": "Dubai",
+   "community": "Meydan",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": 822083,
+   "title": "New World launches Marwa Views in Meydan",
+   "summary": "Off-plan studios to 3-bedroom apartments (457–1,809 sq ft), handover Q1 2027, on sale with a 20/40/40 payment plan.",
+   "source": "EZRE project page",
+   "url": "https://ezre.ae/projects/marwa-views",
+   "paymentPlan": {
+    "label": "20/40/40",
+    "booking": 20,
+    "pre": 20,
+    "handover": 40,
+    "post": 40,
+    "postMonths": null,
+    "source": "https://ezre.ae/projects/marwa-views"
+   }
+  },
+  {
+   "id": 193,
+   "date": "2026-11-14",
+   "dateType": "listed",
+   "stage": "launch",
+   "developer": "Object One",
+   "project": "1CTRL",
+   "emirate": "Dubai",
+   "community": "Dubai Land",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": 303765,
+   "title": "Object One lists 1CTRL in Dubai Land",
+   "summary": "Off-plan 1 to 3-bedroom partly furnished apartments (567–2,051 sq ft), handover Q2 2029, on sale with two published payment plans.",
+   "source": "EZRE project page",
+   "url": "https://ezre.ae/projects/1ctrl"
+  },
+  {
+   "id": 194,
+   "date": "2026-11-11",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Ardee Developments",
+   "project": "Ardee Views",
+   "emirate": "Ras Al Khaimah",
+   "community": "Al Marjan Island",
+   "unitType": "Apartment",
+   "unitBasis": "inferred",
+   "priceFrom": null,
+   "title": "Ardee unveils Ardee Views towers in Al Marjan Island",
+   "summary": "Twin residential towers totalling 652 units, the residential gateway to the AED 15bn+ Ardee Downtown mixed-use district; phased delivery from 2030.",
+   "source": "Business Today",
+   "url": "https://businesstoday.me/real-estate/ardee-aed-15-billion-downtown-masterplan/"
+  }
+ ]
+}
