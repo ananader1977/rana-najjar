@@ -1,0 +1,43 @@
+{
+ "items": [
+  {
+   "id": 216,
+   "date": "2026-11-16",
+   "dateType": "listed",
+   "stage": "launch",
+   "developer": "Radiant",
+   "project": "Trace Park",
+   "emirate": "Dubai",
+   "community": "Jumeirah Village Circle (JVC)",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": 464000,
+   "title": "Radiant lists Trace Park in JVC",
+   "summary": "Off-plan JVC residential tower of 228 studio, 1- and 2-bedroom apartments, 296 to 865 sq ft, handover Q4 2026, starting from AED 464K.",
+   "source": "EZRE launch register (ezre.ae)",
+   "url": "https://ezre.ae/projects/trace-park",
+   "units": 228,
+   "sizeMinSqft": 296,
+   "sizeMaxSqft": 865,
+   "estSqft": 132000,
+   "specSource": "https://ezre.ae/projects/trace-park"
+  },
+  {
+   "id": 217,
+   "date": "2026-11-16",
+   "dateType": "listed",
+   "stage": "launch",
+   "developer": "Zoya Developments",
+   "project": "Soréi by Zoya",
+   "emirate": "Dubai",
+   "community": "Dubai South",
+   "unitType": "Apartment",
+   "unitBasis": "inferred",
+   "priceFrom": 700000,
+   "title": "Zoya lists Soréi by Zoya in Dubai South",
+   "summary": "New Zoya project in Dubai South listed on the launch register with studio to 2-bedroom apartments from AED 700K. Payment plan and handover not verified.",
+   "source": "EZRE launch register (ezre.ae)",
+   "url": "https://ezre.ae/new-launches"
+  }
+ ]
+}
