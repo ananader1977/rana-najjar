@@ -1,0 +1,38 @@
+{
+ "items": [
+  {
+   "id": 231,
+   "date": "2026-11-19",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "AVENEW",
+   "project": "St. Regis Residences",
+   "emirate": "Dubai",
+   "community": "Dubai Islands",
+   "unitType": "Apartment",
+   "unitBasis": "inferred",
+   "priceFrom": null,
+   "title": "AVENEW launches St. Regis Residences on Dubai Islands",
+   "summary": "Beachfront development of 248 residences across two buildings, branded with Marriott's St. Regis, with one- to five-bedroom homes including penthouses. Prices not stated.",
+   "source": "Gulf News",
+   "url": "https://gulfnews.com/business/property/avenew-development-launches-st-regis-residences-on-dubai-islands-1.500753592"
+  },
+  {
+   "id": 232,
+   "date": "2026-11-18",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "ORA",
+   "project": "BAYN",
+   "emirate": "Abu Dhabi",
+   "community": "Ghantoot",
+   "unitType": "Mixed",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "BAYN Phase 1 construction under way on the Ghantoot coast",
+   "summary": "First residential launch of 464 villas and townhouses sold out within 72 hours. Dh1.9bn Phase 1 contract awarded to UNEC, main works began June 2026, first handovers targeted for Q4 2028.",
+   "source": "The National",
+   "url": "https://www.thenationalnews.com/in-focus/2026/11/18/how-bayn-is-bringing-everyday-life-into-focus-on-the-ghantoot-coast/"
+  }
+ ]
+}
