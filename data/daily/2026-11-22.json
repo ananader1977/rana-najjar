@@ -1,0 +1,47 @@
+{
+ "items": [
+  {
+   "id": 234,
+   "date": "2026-11-22",
+   "dateType": "listed",
+   "stage": "launch",
+   "developer": "Zoya Developments",
+   "project": "Cellista By Zoya",
+   "emirate": "Dubai",
+   "community": "Madinat Al Mataar",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": 626000,
+   "title": "Cellista By Zoya opens studios from AED 626K in Madinat Al Mataar",
+   "summary": "Off-plan studio apartments from 352 sq ft with handover in Q3 2029. Developer plan is 20% on booking, 28% during construction, 10% on handover and 42% over 60 months after handover.",
+   "source": "EZRE",
+   "url": "https://ezre.ae/projects/callista-by-zoya",
+   "paymentPlan": {
+    "label": "48/10/42",
+    "booking": 20,
+    "pre": 48,
+    "handover": 10,
+    "post": 42,
+    "postMonths": 60,
+    "source": "https://ezre.ae/projects/callista-by-zoya/payment-plan"
+   }
+  },
+  {
+   "id": 235,
+   "date": "2026-11-22",
+   "dateType": "listed",
+   "stage": "launch",
+   "developer": "Evera Development",
+   "project": "Merdan Residences",
+   "emirate": "Dubai",
+   "community": "Dubai Sports City",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": 667658,
+   "title": "Merdan Residences launches studios from AED 668K in Dubai Sports City",
+   "summary": "Off-plan studio to two-bedroom apartments from 393 sq ft with handover in Q4 2027. Three payment plans are published (30/70, 40/60 and 50/50), so no single plan is recorded.",
+   "source": "EZRE",
+   "url": "https://ezre.ae/projects/merdan-residence"
+  }
+ ]
+}
