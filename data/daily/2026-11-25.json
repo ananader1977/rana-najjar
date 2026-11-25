@@ -1,0 +1,21 @@
+{
+ "items": [
+  {
+   "id": 238,
+   "date": "2026-11-24",
+   "dateType": "reported",
+   "stage": "launch",
+   "developer": "Aldar",
+   "project": "The Hoxton Homes Abu Dhabi Saadiyat",
+   "emirate": "Abu Dhabi",
+   "community": "NOMA, Saadiyat Cultural District",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "Aldar and Ennismore launch first Hoxton-branded residences in NOMA",
+   "summary": "Almost 100 one- and two-bedroom apartments of roughly 64 to 145 sqm, with a private lobby, clubhouse and gym, sit alongside The Hoxton Abu Dhabi Saadiyat hotel. No opening or handover date has been announced.",
+   "source": "Rust Tourism News",
+   "url": "https://www.rustourismnews.com/2026/11/24/the-hoxton-announces-first-abu-dhabi-hotel-and-nearly-100-branded-residences/"
+  }
+ ]
+}
