@@ -1,0 +1,38 @@
+{
+ "items": [
+  {
+   "id": 243,
+   "date": "2026-11-26",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "Nakheel",
+   "project": "Palm Jebel Ali – Fronds A–D villas",
+   "emirate": "Dubai",
+   "community": "Palm Jebel Ali",
+   "unitType": "Villa",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "Nakheel awards AED1.4bn build contract for 176 Palm Jebel Ali villas",
+   "summary": "Nakheel has awarded the construction contract for 176 villas on fronds A to D of Palm Jebel Ali, comprising 128 beach and 48 coral villas, with completion expected within 24 months of works starting.",
+   "source": "The National",
+   "url": "https://www.thenationalnews.com/business/property/2026/11/26/nakheel-awards-dh14bn-contract-to-build-176-villas-on-palm-jebel-ali/"
+  },
+  {
+   "id": 244,
+   "date": "2026-11-25",
+   "dateType": "reported",
+   "stage": "existing",
+   "developer": "H&H",
+   "project": "Dubai Harbour Residences",
+   "emirate": "Dubai",
+   "community": "Dubai Harbour",
+   "unitType": "Apartment",
+   "unitBasis": "stated",
+   "priceFrom": null,
+   "title": "Dubai Harbour Residences reaches topping-out",
+   "summary": "Khansaheb has marked the topping-out of Dubai Harbour Residences, a low-rise beachfront apartment development by H&H for Shamal, alongside hotels in the wider scheme. H&H said in July that Buildings A and B were expected to top out in the following quarter.",
+   "source": "Gulf Construction",
+   "url": "https://gulfconstructiononline.com/ArticleTA/465103/khansaheb-celebrates-topping-out-of-dubai-harbour-residences"
+  }
+ ]
+}
